@@ -56,7 +56,7 @@ layouts =
 {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
+    -- awful.layout.suit.tile.left,
     awful.layout.suit.tile.top,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.fair,
@@ -74,7 +74,7 @@ layouts =
 tags = {
   names = { "1", "2", "3", "4", "5", "6-moz", "7-cs127", "8-cs168", "9-web" },
   layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2],
-      layouts[3], layouts[3], layouts[3], layouts[2] }
+      layouts[2], layouts[2], layouts[2], layouts[2] }
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
