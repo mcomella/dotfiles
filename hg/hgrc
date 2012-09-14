@@ -1,0 +1,11 @@
+[ui]
+username = Michael Comella <michael.l.comella@gmail.com>
+merge = internal:merge
+ 
+[diff]
+git = 1
+showfunc = 1
+unified = 8
+
+[defaults]
+commit = -v
