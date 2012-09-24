@@ -1,11 +1,30 @@
 [ui]
 username = Michael Comella <michael.l.comella@gmail.com>
 merge = internal:merge
- 
-[diff]
-git = 1
-showfunc = 1
-unified = 8
+
+[paths]
+default = http://hg.mozilla.org/mozilla-central/
+# NOTE: You probably want to add SSH user names when you finish this
+# See https://developer.mozilla.org/en/Mercurial_FAQ#How_do_I_check_stuff_in.3F
+# default-push = ssh://hg.mozilla.org/mozilla-central/
+try = ssh://hg.mozilla.org/try/
 
 [defaults]
 commit = -v
+diff = -pU 8
+qdiff = -pU 8
+qnew = -Ue
+
+[diff]
+git = 1
+showfunc = 1
+unified = 8 
+
+[extensions]
+crecord = ~/Dropbox/dev/hgext/crecord
+hgext.mq =
+purge =
+
+# Extensions
+[mq]
+plain = True
