@@ -19,6 +19,10 @@ if awesome.startup_errors then
                      text = awesome.startup_errors })
 end
 
+-- Turn on compositing manager
+-- TODO: Disabled until xinerama supports compositing.
+-- awful.util.spawn_with_shell("xcompmgr &")
+
 -- Handle runtime errors after startup
 do
     local in_error = false
@@ -40,7 +44,7 @@ end
 beautiful.init("/home/mcomella/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "x-terminal-emulator"
+terminal = "urxvt"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -57,7 +61,7 @@ layouts =
     awful.layout.suit.floating,
     awful.layout.suit.tile,
     -- awful.layout.suit.tile.left,
-    awful.layout.suit.tile.top,
+    -- awful.layout.suit.tile.top,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
@@ -72,13 +76,27 @@ layouts =
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-  names = { "1", "2", "3", "4", "5", "6-moz", "7-cs127", "8-cs168", "9-web" },
-  layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2],
-      layouts[2], layouts[2], layouts[2], layouts[2] }
-}
+  settings = {
+    { names = { "7", "8", "9", "0", "[", "]" },
+      layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2],
+      layouts[6] }
+    },
+    { names = { "7", "8", "9", "0", "[", "]" },
+      layout = { layouts[3], layouts[3], layouts[3], layouts[3], layouts[3],
+      layouts[6] }
+}}}
+--tags = {
+--  settings = {
+--    { names = { "7", "8", "9" },
+--      layout = { layouts[2], layouts[2], layouts[6] }
+--    },
+--    { names = { "7", "8", "9" },
+--      layout = { layouts[3], layouts[3], layouts[6] }
+--}}}
+
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag(tags.names, s, tags.layout)
+    tags[s] = awful.tag(tags.settings[s].names, s, tags.settings[s].layout)
 end
 -- }}}
 
@@ -222,6 +240,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "h", function () awful.client.swap.byidx( -1)    end),
     awful.key({ modkey, "Control" }, "t", function () awful.screen.focus_relative( 1) end),
     awful.key({ modkey, "Control" }, "h", function () awful.screen.focus_relative(-1) end),
+    -- Matches send to screen key
+    awful.key({ modkey,           }, "c", function () awful.screen.focus_relative(1) end),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
     awful.key({ modkey,           }, "Tab",
         function ()
@@ -256,15 +276,18 @@ globalkeys = awful.util.table.join(
                   mypromptbox[mouse.screen].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
-              end)
+              end),
+
+    -- Keyboard Shortcuts
+    awful.key({ modkey            }, "l", function () awful.util.spawn("xlock") end)
 )
 
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
+    awful.key({ modkey, "Shift"   }, "g",      function (c) c:kill()                         end),
     awful.key({ modkey, "Control" }, "BackSpace",  awful.client.floating.toggle                     ),
-    awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
-    awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
+    awful.key({ modkey, "Shift"   }, "Return", function (c) c:swap(awful.client.getmaster()) end),
+    awful.key({ modkey, "Shift"   }, "c",      awful.client.movetoscreen                        ),
     awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
     awful.key({ modkey,           }, "-",      function (c) c.ontop = not c.ontop            end),
     awful.key({ modkey,           }, "b",
@@ -291,27 +314,27 @@ end
 -- This should map on the top row of your keyboard, usually 1 to 9.
 for i = 1, keynumber do
     globalkeys = awful.util.table.join(globalkeys,
-        awful.key({ modkey }, "#" .. i + 9,
+        awful.key({ modkey }, "#" .. i + 15,
                   function ()
                         local screen = mouse.screen
                         if tags[screen][i] then
                             awful.tag.viewonly(tags[screen][i])
                         end
                   end),
-        awful.key({ modkey, "Control" }, "#" .. i + 9,
+        awful.key({ modkey, "Control" }, "#" .. i + 15,
                   function ()
                       local screen = mouse.screen
                       if tags[screen][i] then
                           awful.tag.viewtoggle(tags[screen][i])
                       end
                   end),
-        awful.key({ modkey, "Shift" }, "#" .. i + 9,
+        awful.key({ modkey, "Shift" }, "#" .. i + 15,
                   function ()
                       if client.focus and tags[client.focus.screen][i] then
                           awful.client.movetotag(tags[client.focus.screen][i])
                       end
                   end),
-        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
+        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 15,
                   function ()
                       if client.focus and tags[client.focus.screen][i] then
                           awful.client.toggletag(tags[client.focus.screen][i])
@@ -336,13 +359,16 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = true,
                      keys = clientkeys,
-                     buttons = clientbuttons } },
+                     buttons = clientbuttons,
+                     size_hints_honor = false } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "pinentry" },
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
+    { rule = { class = "xterm" },
+      properties = {opacity = 0.8 } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
