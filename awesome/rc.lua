@@ -60,7 +60,7 @@ layouts =
 {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
-    -- awful.layout.suit.tile.left,
+    awful.layout.suit.tile.left,
     -- awful.layout.suit.tile.top,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.fair,
@@ -78,12 +78,12 @@ layouts =
 tags = {
   settings = {
     { names = { "7", "8", "9", "0", "[", "]" },
-      layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2],
-      layouts[6] }
+      layout = { layouts[3], layouts[3], layouts[3], layouts[3], layouts[3],
+      layouts[7] }
     },
     { names = { "7", "8", "9", "0", "[", "]" },
-      layout = { layouts[3], layouts[3], layouts[3], layouts[3], layouts[3],
-      layouts[6] }
+      layout = { layouts[4], layouts[4], layouts[4], layouts[4], layouts[4],
+      layouts[7] }
 }}}
 --tags = {
 --  settings = {
