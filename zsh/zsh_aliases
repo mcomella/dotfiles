@@ -9,7 +9,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias abroad="cd ~/Dropbox/Documents/brown/abroad/"
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias sb="cd ~/dev/sb"
@@ -23,10 +22,6 @@ alias suspend="sudo pm-suspend && xlock"
 alias xl="xlock"
 alias vocab="vim ~/Dropbox/Documents/vocab.txt"
 
-# Android
-alias minam='ANDROID_SERIAL=0146BF540F01801A'
-alias kaggeum='ANDROID_SERIAL=BCOKAS110839'
-
 # Fennec
 alias f_push="adb install dist/fennec*.apk"
 alias f_cpush="adb uninstall org.mozilla.fennec_mcomella && \
@@ -37,6 +32,3 @@ alias f_cpbuild="f_pbuild && f_cpush"
 alias f_bs="adb push ../mobile/android/chrome/content /sdcard/bootstrapper/content/"
 
 alias f_log="adb logcat -v time"
-
-# Temp
-alias team="cd $HOME/Documents/course/cs168/team"
