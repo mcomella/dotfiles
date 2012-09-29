@@ -28,11 +28,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# Source aliases
-if [ -f $HOME/.zsh_aliases ]; then
-  . $HOME/.zsh_aliases
-fi
-
 # Setting umask
 umask 077
 
@@ -49,3 +44,16 @@ export VISUAL=/usr/bin/vim
 
 # Prompt
 export PS1='%n@%m:%~ $ '
+
+# Aliases
+if [ -f $HOME/.zsh_aliases ]; then
+  . $HOME/.zsh_aliases
+fi
+
+# Local config
+if [ -f $HOME/.zshrc_local ]; then
+  $HOME/.zshrc_local
+fi
+if [ -f $HOME/.zsh_aliases_local ]; then
+  . $HOME/.zsh_aliases_local
+fi
