@@ -29,8 +29,8 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Source aliases
-if [ -f $HOME/.aliases ]; then
-  . $HOME/.aliases
+if [ -f $HOME/.zsh_aliases ]; then
+  . $HOME/.zsh_aliases
 fi
 
 # Setting umask
