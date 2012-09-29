@@ -33,7 +33,7 @@ fi
 
 # Local config
 if [ -f $HOME/.zshrc_local ]; then
-  $HOME/.zshrc_local
+  . $HOME/.zshrc_local
 fi
 if [ -f $HOME/.zsh_aliases_local ]; then
   . $HOME/.zsh_aliases_local
