@@ -1,0 +1,51 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1500
+SAVEHIST=1500
+setopt appendhistory
+
+unsetopt autocd beep
+
+bindkey -v
+
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/mcomella/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# Source aliases
+if [ -f $HOME/.aliases ]; then
+  . $HOME/.aliases
+fi
+
+# Setting umask
+umask 077
+
+# Append to path
+export PATH=${PATH}:/home/mcomella/dev/sdks/android-sdk-linux/platform-tools
+export PATH=${PATH}:/home/mcomella/dev/sdks/android-sdk-linux/tools
+
+# Append to classpath
+export CLASSPATH=${CLASSPATH}:/home/mcomella/course/dm/weka-3-6-7/weka.jar
+
+# Update default editor
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
+
+# Prompt
+export PS1='%n@%m:%~ $ '
