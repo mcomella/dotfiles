@@ -30,6 +30,7 @@ au BufNewFile,BufRead *.c,*.cpp,*.dtd,*.h,*.md, call SetupFourSpace()
 au BufNewFile,BufRead *.java* call SetupJava()
 au BufNewFile,BufRead *.txt call SetupTxt()
 au BufNewFile,BufRead *.xml*,*.rdf call SetupXml()
+au BufNewFile,BufRead .git/COMMIT_EDITMSG call SetupGitCommit()
 
 function SetupColorColumnNone()
   set colorcolumn=0
@@ -62,4 +63,9 @@ function SetupXml()
 
   set shiftwidth=4
   set softtabstop=4
+endfunction
+
+function SetupGitCommit()
+  set colorcolumn=73
+  set textwidth=73
 endfunction
