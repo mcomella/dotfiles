@@ -61,15 +61,15 @@ layouts =
     awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
+    awful.layout.suit.fair,
     -- awful.layout.suit.tile.top,
     awful.layout.suit.tile.bottom,
-    awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
     -- awful.layout.suit.spiral,
     -- awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+    -- awful.layout.suit.magnifier
 }
 -- }}}
 
@@ -77,22 +77,12 @@ layouts =
 -- Define a tag table which hold all screen tags.
 tags = {
   settings = {
-    { names = { "7", "8", "9", "0", "[", "]" },
-      layout = { layouts[3], layouts[3], layouts[3], layouts[3], layouts[3],
-      layouts[7] }
+    { names = { "7", "8", "9", "0" },
+      layout = { layouts[3], layouts[3], layouts[3], layouts[3] }
     },
-    { names = { "7", "8", "9", "0", "[", "]" },
-      layout = { layouts[4], layouts[4], layouts[4], layouts[4], layouts[4],
-      layouts[7] }
+    { names = { "7", "8", "9", "0", },
+      layout = { layouts[5], layouts[5], layouts[5], layouts[5] }
 }}}
---tags = {
---  settings = {
---    { names = { "7", "8", "9" },
---      layout = { layouts[2], layouts[2], layouts[6] }
---    },
---    { names = { "7", "8", "9" },
---      layout = { layouts[3], layouts[3], layouts[6] }
---}}}
 
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
