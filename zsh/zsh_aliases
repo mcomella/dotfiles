@@ -26,6 +26,7 @@ alias dl="cd ~/Downloads"
 alias sb="cd ~/dev/sb"
 
 # Misc
+alias c="ctags -R"
 alias ff="find . | xargs grep"
 alias fx="firefox"
 alias g="git"
