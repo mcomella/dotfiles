@@ -24,7 +24,7 @@ export EDITOR=vim
 export VISUAL=vim
 
 # Prompt
-export PS1='%n@%m:%~ $ '
+export PS1='%n@%m:%~$ '
 
 # Aliases
 if [ -f $HOME/.zsh_aliases ]; then
