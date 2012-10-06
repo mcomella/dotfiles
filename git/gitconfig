@@ -1,6 +1,42 @@
-[user]
-	name = Michael Comella
-	email = michael.l.comella@gmail.com
+[alias]
+	a = add
+	ai = add --interactive
+	b = branch
+	c = commit
+	co = checkout
+	d = diff
+	ds = diff --staged
+	# diff that highlights the changed lines, and ALSO changed words and chars
+	# git wds does the same for staged changes.
+	dw = diff --color-words
+	dws = diff --color-words --staged
+	loa = log --pretty=oneline --abbrev-commit --graph --decorate --color --all
+	lob = log --pretty=oneline --abbrev-commit --graph --decorate --color --branches
+	lol = log --pretty=oneline --abbrev-commit --decorate --color
+	lop = log -p
+	ls = ls-files
+        st = stash
+	s = status
+	ss = status -s
+	unstage = reset HEAD
+	uncommit = reset --soft # include a hash at the end!
+	amend = commit --amend
+	wc = whatchanged
+	ls-ignored = ls-files --exclude-standard --ignored --others
+
+[core]
+	excludesfile = ~/.gitignore
 
 [color]
 	ui = true
+[color "diff"]
+	new = green
+	old = red
+	whitespace = red reverse
+
+[github]
+	user = mcomella
+
+[user]
+	name = Michael Comella
+	email = michael.l.comella@gmail.com
