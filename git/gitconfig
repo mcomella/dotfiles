@@ -16,8 +16,8 @@
 	lop = log -p
 	ls = ls-files
         st = stash
-	s = status
-	ss = status -s
+	s = status -s
+	ss = status
 	unstage = reset HEAD
 	uncommit = reset --soft # include a hash at the end!
 	amend = commit --amend
