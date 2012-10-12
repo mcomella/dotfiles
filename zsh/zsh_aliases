@@ -28,6 +28,7 @@ alias sb="cd ~/dev/sb"
 # Misc
 alias c="ctags -R"
 alias d="gdb"
+alias e="vim"
 alias ff="find . | xargs grep"
 alias fx="firefox"
 alias g="git"
@@ -36,6 +37,7 @@ alias rmf="rm -f"
 alias suspend="sudo pm-suspend && xlock"
 alias u="fg" # For ergo reasons.
 alias xl="xlock"
+alias v="view"
 alias vocab="vim ~/Dropbox/Documents/vocab.txt"
 
 # Fennec
