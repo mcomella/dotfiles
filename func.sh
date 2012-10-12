@@ -9,12 +9,14 @@ linkOrWarn() {
     fi;
 }
 
-# name repo_loc dest
+# name repo_loc tag dest
+# Pass "HEAD" as tag if you want the most recent.
 gitCloneOrWarn() {
-    if [ -d $3 ]; then
-        echo -e "\t$3 already exists. $2 not cloned."
+    if [ -d $4 ]; then
+        echo -e "\t$4 already exists. $2 not cloned."
     else
         echo -e "\tgit clone $1..."
-        git clone -q $2 $3
+        git clone -q $2 $4 && \
+                cd $4 && git checkout -q $3 && echo -e "\t\tgit checkout $3"
     fi
 }
