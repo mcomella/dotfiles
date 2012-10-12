@@ -27,6 +27,7 @@ alias sb="cd ~/dev/sb"
 
 # Misc
 alias c="ctags -R"
+alias d="gdb"
 alias ff="find . | xargs grep"
 alias fx="firefox"
 alias g="git"
