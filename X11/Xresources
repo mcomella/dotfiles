@@ -86,6 +86,12 @@
 XTerm*faceName: Inconsolata-dz
 XTerm*faceSize: 12
 
+!! XCLOCK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+xclock*hourColor: S_base0
+xclock*minuteColor: S_base0
+xclock*majorColor: S_blue
+xclock*minorColor: S_base0
+
 !! XFT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Xft.antialias: true
 
