@@ -45,14 +45,10 @@ beautiful.init("/home/mcomella/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
-editor = os.getenv("EDITOR") or "editor"
+editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -110,11 +106,27 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- }}}
 
 -- {{{ Wibox
--- Create a textclock widget
+mysystray = widget({ type = "systray" })
+
 mytextclock = awful.widget.textclock({ align = "right" })
 
--- Create a systray
-mysystray = widget({ type = "systray" })
+myseparator = widget({ type = "textbox" })
+myseparator.text = "|"
+
+myspace = widget({ type = "textbox" })
+myspace.text = " "
+
+-- Obvious widgets
+require("obvious.cpu")
+require("obvious.mem")
+--require("obvious.io")
+require("obvious.net")
+bordercolor = "#aaaaaa"
+mycpuwig = obvious.cpu():set_type("progressbar").widget
+mymemwig = obvious.mem():set_type("progressbar").widget
+--myiowig = obvious.io("/dev/sdb2"):set_type("textbox").widget
+mynetr = obvious.net.recv("eth0"):set_type("graph"):set_border_color(bordercolor):set_width(50).widget
+mynets = obvious.net.send("eth0"):set_type("graph"):set_border_color(bordercolor):set_width(50).widget
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -192,6 +204,14 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
+        myseparator,
+        mynets,
+        mynetr,
+        myseparator,
+        mymemwig,
+        myseparator,
+        mycpuwig,
+        s == 1 and myseparator or nil,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
@@ -232,7 +252,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "h", function () awful.screen.focus_relative(-1) end),
     -- Matches send to screen key
     awful.key({ modkey,           }, "c", function () awful.screen.focus_relative(1) end),
-    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
+    awful.key({ modkey,           }, "d", awful.client.urgent.jumpto),
     awful.key({ modkey,           }, "Tab",
         function ()
             awful.client.focus.history.previous()
@@ -357,13 +377,14 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-    { rule = { class = "xterm" },
-      properties = {opacity = 0.8 } },
     { rule = { class = "xchat" },
       properties = { tag = tags[1][4] } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
+    -- TODO: When xinerama supports compositing?
+    --{ rule = { class = "xterm" },
+     -- properties = {opacity = 0.8 } },
 }
 -- }}}
 
@@ -386,7 +407,7 @@ client.add_signal("manage", function (c, startup)
         -- i.e. put it at the end of others instead of setting it master.
         awful.client.setslave(c)
 
-        -- Put windows in a smart way, only if they does not set an initial position.
+        -- Put windows in a smart way, only if they do not set an initial position.
         if not c.size_hints.user_position and not c.size_hints.program_position then
             awful.placement.no_overlap(c)
             awful.placement.no_offscreen(c)
