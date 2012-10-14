@@ -50,3 +50,8 @@ alias f_cpbuild="f_pbuild && f_cpush"
 alias f_bs="adb push ../mobile/android/chrome/content /sdcard/bootstrapper/content/"
 
 alias f_log="adb logcat -v time"
+
+# Local config
+if [ -f $HOME/.zsh_aliases_local ]; then
+  . $HOME/.zsh_aliases_local
+fi
