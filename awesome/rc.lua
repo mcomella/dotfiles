@@ -119,14 +119,16 @@ require("obvious.mem")
 --require("obvious.io")
 require("obvious.net")
 mycpuwig = obvious.cpu():set_type("progressbar"):
-    set_color(theme.widget_fg).widget
+    set_background_color(theme.widget_bg):set_color(theme.widget_fg).widget
 mymemwig = obvious.mem():set_type("progressbar"):
-    set_color(theme.widget_fg).widget
+    set_background_color(theme.widget_bg):set_color(theme.widget_fg).widget
 --myiowig = obvious.io("/dev/sdb2"):set_type("textbox").widget
 mynetr = obvious.net.recv("eth0"):set_type("graph"):
-    set_color(theme.widget_fg_net_recv):set_width(25).widget
+    set_background_color(theme.widget_bg):set_color(theme.widget_fg_net_recv):
+    set_width(25).widget
 mynets = obvious.net.send("eth0"):set_type("graph"):
-    set_color(theme.widget_fg_net_send):set_width(25).widget
+    set_background_color(theme.widget_bg):set_color(theme.widget_fg_net_send):
+    set_width(25).widget
 
 -- Create a wibox for each screen and add it
 mywibox = {}

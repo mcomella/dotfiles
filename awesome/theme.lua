@@ -37,6 +37,7 @@ theme.border_focus  = orange
 theme.border_marked = "#91231c"
 
 -- Widget
+theme.widget_bg = base03
 theme.widget_fg = blue
 theme.widget_fg_net_recv = red
 theme.widget_fg_net_send = green
