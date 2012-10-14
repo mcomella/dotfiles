@@ -15,6 +15,8 @@
 	lol = log --pretty=oneline --abbrev-commit --decorate --color
 	lop = log -p
 	ls = ls-files
+        pl = pull
+        ps = push
         st = stash
 	s = status -s
 	ss = status
