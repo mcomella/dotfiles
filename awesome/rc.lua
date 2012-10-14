@@ -73,11 +73,11 @@ layouts =
 -- Define a tag table which hold all screen tags.
 tags = {
   settings = {
-    { names = { "web", "8", "9", "0" },
-      layout = { layouts[3], layouts[3], layouts[3], layouts[3] }
+    { names = { "web", "8", "9", "0", "mus" },
+      layout = { layouts[3], layouts[3], layouts[3], layouts[3], layouts[3] }
     },
-    { names = { "7", "8", "9", "irc", },
-      layout = { layouts[5], layouts[5], layouts[5], layouts[5] }
+    { names = { "7", "8", "9", "0", "irc" },
+      layout = { layouts[5], layouts[5], layouts[5], layouts[5], layouts[5] }
 }}}
 
 for s = 1, screen.count() do
@@ -379,7 +379,7 @@ awful.rules.rules = {
     { rule = { class = "gimp" },
       properties = { floating = true } },
     { rule = { class = "xchat" },
-      properties = { tag = tags[1][4] } },
+      properties = { tag = tags[1][5] } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
