@@ -111,22 +111,22 @@ mysystray = widget({ type = "systray" })
 mytextclock = awful.widget.textclock({ align = "right" })
 
 myseparator = widget({ type = "textbox" })
-myseparator.text = "|"
-
-myspace = widget({ type = "textbox" })
-myspace.text = " "
+myseparator.text = " :: "
 
 -- Obvious widgets
 require("obvious.cpu")
 require("obvious.mem")
 --require("obvious.io")
 require("obvious.net")
-bordercolor = "#aaaaaa"
-mycpuwig = obvious.cpu():set_type("progressbar").widget
-mymemwig = obvious.mem():set_type("progressbar").widget
+mycpuwig = obvious.cpu():set_type("progressbar"):
+    set_color(theme.widget_fg).widget
+mymemwig = obvious.mem():set_type("progressbar"):
+    set_color(theme.widget_fg).widget
 --myiowig = obvious.io("/dev/sdb2"):set_type("textbox").widget
-mynetr = obvious.net.recv("eth0"):set_type("graph"):set_border_color(bordercolor):set_width(50).widget
-mynets = obvious.net.send("eth0"):set_type("graph"):set_border_color(bordercolor):set_width(50).widget
+mynetr = obvious.net.recv("eth0"):set_type("graph"):
+    set_color(theme.widget_fg_net_recv):set_width(25).widget
+mynets = obvious.net.send("eth0"):set_type("graph"):
+    set_color(theme.widget_fg_net_send):set_width(25).widget
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -204,14 +204,13 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
-        myseparator,
-        mynets,
-        mynetr,
-        myseparator,
-        mymemwig,
-        myseparator,
-        mycpuwig,
+        s == 1 and mynets or nil,
         s == 1 and myseparator or nil,
+        s == 1 and mynetr or nil,
+        s == 1 and myseparator or nil,
+        s == 1 and mymemwig or nil,
+        s == 1 and myseparator or nil,
+        s == 1 and mycpuwig or nil,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
