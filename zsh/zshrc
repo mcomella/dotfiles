@@ -16,6 +16,11 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Use dircolors (if it exists)
+which dircolors &> /dev/null && if [ -f $HOME/.dircolors ]; then
+    eval `dircolors $HOME/.dircolors`
+fi
+
 # Setting umask
 umask 007
 

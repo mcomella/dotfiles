@@ -17,5 +17,5 @@ if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
 fi
 
 gitCloneOrWarn solarized git://github.com/altercation/vim-colors-solarized.git \
-        ~/.vim/bundle/vim-colors-solarized
-gitCloneOrWarn tagbar git://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar
+        HEAD ~/.vim/bundle/vim-colors-solarized
+gitCloneOrWarn tagbar git://github.com/majutsushi/tagbar.git HEAD ~/.vim/bundle/tagbar
