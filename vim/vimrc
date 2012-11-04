@@ -29,7 +29,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " Filetype specific settings
 au BufNewFile,BufRead *.xml*,*.rdf,*.rej call SetupColorColumnNone()
-au BufNewFile,BufRead *.java*,*.js* call SetupColorColumnOneHundred()
+au BufNewFile,BufRead *.java* call SetupColorColumnOneHundred()
 au BufNewFile,BufRead *.txt call SetupTxt()
 au BufNewFile,BufRead .git/COMMIT_EDITMSG call SetupGitCommit()
 
