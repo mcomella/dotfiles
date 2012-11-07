@@ -1,1 +1,3 @@
 set complete="lf"
+
+set editor=~/bin/external_editor
