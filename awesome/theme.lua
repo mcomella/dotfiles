@@ -90,7 +90,10 @@ theme.layout_dwindle =      layout_dir .. "dwindlew.png"
 theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
 
 -- Wallpaper --
-theme.wallpaper_cmd = { "feh --bg-scale '$HOME/.config/awesome/themes/bg/bg.jpg' '$HOME/.config/awesome/themes/bg/bg_tall.jpg'" }
+bg_dir = config_dir .. "themes/bg/"
+bg = bg_dir .. "bg.jpg"
+bg_tall = bg_dir .. "bg_tall.jpg"
+theme.wallpaper_cmd = { "feh --bg-scale " .. bg .. " " .. bg_tall }
 
 -- Titlebar icons --
 theme.titlebar_close_button_normal = "/usr/share/awesome/themes/default/titlebar/close_normal.png"
