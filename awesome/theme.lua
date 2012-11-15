@@ -96,7 +96,7 @@ theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/defau
 
 -- You can use your own command to set your wallpaper
 -- theme.wallpaper_cmd = { "awsetbg -f /home/mcomella/.config/awesome/background.jpg" }
-theme.wallpaper_cmd = { "feh --bg-scale '/home/mcomella/.config/awesome/bg.jpg' '/home/mcomella/.config/awesome/bg_tall.jpg'" }
+theme.wallpaper_cmd = { "feh --bg-scale '$HOME/.config/awesome/themes/bg.jpg' '$HOME/.config/awesome/themes/bg_tall.jpg'" }
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png"
