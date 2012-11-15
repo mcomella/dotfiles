@@ -18,7 +18,7 @@ blue    = "#268bd2"
 cyan    = "#2aa198"
 green   = "#859900"
 
--- Set theme --
+-- General --
 theme = {}
 
 theme.font          = "sans 8"
@@ -38,7 +38,7 @@ theme.border_normal = "#000000"
 theme.border_focus  = blue
 theme.border_marked = "#91231c"
 
--- Widget
+-- Widgets --
 theme.widget_bg = base03
 theme.widget_fg = blue
 theme.widget_fg_net_recv = red
