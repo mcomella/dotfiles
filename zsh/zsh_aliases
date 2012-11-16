@@ -34,6 +34,7 @@ alias ff="find . | xargs grep"
 alias fx="firefox"
 alias g="git"
 alias m="make -j12"
+alias mcm="m clean && m"
 alias rmf="rm -f"
 alias suspend="sudo pm-suspend && xlock"
 alias u="fg" # For ergo reasons.
