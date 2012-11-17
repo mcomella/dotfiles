@@ -28,10 +28,37 @@ showfunc = 1
 unified = 8
 
 [extensions]
+color =
 crecord = ~/Dropbox/dev/hgext/crecord
 hgext.mq =
 purge =
 
 # Extensions
+[color]
+mode = auto
+
+status.modified = blue
+status.added = green
+status.removed = red
+status.deleted = cyan
+status.unknown = magenta
+#status.ignored = black
+#status.clean = none
+#status.copied = none
+
+qseries.applied = green
+qseries.unapplied = blue
+qseries.missing = red
+
+diff.diffline = bold
+diff.extended = cyan bold
+diff.file_a = red
+diff.file_b = green
+diff.hunk = magenta
+diff.deleted = red
+diff.inserted = green
+diff.changed = white
+diff.trailingwhitespace = red_background
+
 [mq]
 plain = True
