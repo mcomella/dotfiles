@@ -9,6 +9,13 @@ default = http://hg.mozilla.org/mozilla-central/
 # default-push = ssh://hg.mozilla.org/mozilla-central/
 try = ssh://hg.mozilla.org/try/
 
+[alias]
+a = add
+d = diff
+pl = pull
+rm = remove
+s = status
+
 [defaults]
 commit = -v
 diff = -pU 8
@@ -18,7 +25,7 @@ qnew = -Ue
 [diff]
 git = 1
 showfunc = 1
-unified = 8 
+unified = 8
 
 [extensions]
 crecord = ~/Dropbox/dev/hgext/crecord
