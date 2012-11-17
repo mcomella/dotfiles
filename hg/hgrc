@@ -11,6 +11,7 @@ try = ssh://hg.mozilla.org/try/
 
 [alias]
 a = add
+co = checkout
 d = diff
 pl = pull
 rm = remove
