@@ -48,7 +48,7 @@ status.unknown = magenta
 #status.copied = none
 
 qseries.applied = green
-qseries.unapplied = blue
+qseries.unapplied = none
 qseries.missing = red
 
 diff.diffline = bold
