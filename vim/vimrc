@@ -38,6 +38,9 @@ set tabstop=8 " To see when tabs are used
 " Keybindings
 nmap <F8> :TagbarToggle<CR>
 
+" Saved macros
+let @d='o// TODO: '
+
 " Filetype specific settings
 au BufNewFile,BufRead *.xml*,*.rdf,*.rej call SetupColorColumnNone()
 au BufNewFile,BufRead *.java* call SetupColorColumnOneHundred()
