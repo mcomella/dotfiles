@@ -1,5 +1,7 @@
 " Plugins
 call pathogen#infect()
+" Open tagbar automatically on vim startup for supported file types.
+autocmd VimEnter * nested :call tagbar#autoopen(1)
 
 " Set physical tools
 set cursorline
