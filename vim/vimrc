@@ -40,6 +40,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " Saved macros
 let @d='o// TODO: '
+let @g='o// *** *** //BBhi '
 let @h="o/79a*o*** o79i*A/ka"
 
 " Filetype specific settings
