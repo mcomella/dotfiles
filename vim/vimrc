@@ -50,7 +50,7 @@ au BufNewFile,BufRead *.txt call SetupTxt()
 au BufNewFile,BufRead .git/COMMIT_EDITMSG call SetupGitCommit()
 
 function SetupColorColumnNone()
-  set colorcolumn=0
+    set colorcolumn=0
 endfunction
 
 function SetupColorColumnOneHundred()
@@ -58,10 +58,10 @@ function SetupColorColumnOneHundred()
 endfunction
 
 function SetupTxt()
-  setlocal spell spelllang=en_us
+    setlocal spell spelllang=en_us
 endfunction
 
 function SetupGitCommit()
-  set colorcolumn=73
-  set textwidth=73
+    set colorcolumn=73
+    set textwidth=73
 endfunction
