@@ -9,10 +9,10 @@ MACRO_PATH="$CONF_PATH/macro"
 
 USAGE="usage: $NAME [-h] command
   commands:
-    activate    Start xwrits - restarts if active
-    deactivate  Stop xwrits
+    a, activate     Start xwrits - restarts if active
+    d, deactivate   Stop xwrits
   flags:
-    -h,--help   Display this message"
+    -h,--help       Display this message"
 
 _run () {
 # TODO: Loop to find multiple images for each level.
@@ -47,11 +47,11 @@ _is_running () {
 if [[ $1 == "-h" || $1 == "--help" ]]; then
   print -u1 $USAGE
 
-elif [[ $1 == "activate" ]]; then
+elif [[ $1 == "activate" || $1 == "a" ]]; then
   _is_running && killall xwrits
   _run
 
-elif [[ $1 == "deactivate" ]]; then
+elif [[ $1 == "deactivate" || $1 == "d" ]]; then
   killall xwrits
 
 else
