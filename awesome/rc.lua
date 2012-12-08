@@ -123,12 +123,6 @@ mycpuwig = obvious.cpu():set_type("progressbar"):
 mymemwig = obvious.mem():set_type("progressbar"):
     set_background_color(theme.widget_bg):set_color(theme.widget_fg).widget
 --myiowig = obvious.io("/dev/sdb2"):set_type("textbox").widget
-mynetr = obvious.net.recv("eth0"):set_type("graph"):
-    set_background_color(theme.widget_bg):set_color(theme.widget_fg_net_recv):
-    set_width(25).widget
-mynets = obvious.net.send("eth0"):set_type("graph"):
-    set_background_color(theme.widget_bg):set_color(theme.widget_fg_net_send):
-    set_width(25).widget
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -206,13 +200,10 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
-        s == 1 and mynets or nil,
-        s == 1 and myseparator or nil,
-        s == 1 and mynetr or nil,
-        s == 1 and myseparator or nil,
         s == 1 and mymemwig or nil,
         s == 1 and myseparator or nil,
         s == 1 and mycpuwig or nil,
+        s == 1 and myseparator or nil,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
