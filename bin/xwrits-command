@@ -9,8 +9,7 @@ MACRO_PATH="$CONF_PATH/macro"
 
 USAGE="usage: $NAME [-h] command
   commands:
-    activate    Start xwrits - assumes it is not running
-    reactivate  Restart xwrits
+    activate    Start xwrits - restarts if active
     deactivate  Stop xwrits
   flags:
     -h,--help   Display this message"
@@ -35,16 +34,21 @@ _run () {
       &
 }
 
-# TODO: Do this in a more extensible way.
+_is_running () {
+  local xwrits_proc_count=$(ps x -u $(whoami) | grep -v grep | \
+      grep -c "xwrits .*M[ai]cro")
+  if [[ $xwrits_proc_count -gt 0 ]]; then
+    return 0
+  fi
+  return -1
+}
+
+# TODO: Do flags/commands in a more extensible way.
 if [[ $1 == "-h" || $1 == "--help" ]]; then
   print -u1 $USAGE
 
 elif [[ $1 == "activate" ]]; then
-  _run
-
-elif [[ $1 == "reactivate" ]]; then
-# TODO: Combine reactivate with start.
-  killall xwrits
+  _is_running && killall xwrits
   _run
 
 elif [[ $1 == "deactivate" ]]; then
