@@ -290,7 +290,7 @@ globalkeys = awful.util.table.join(
               end),
 
     -- Keyboard Shortcuts
-    awful.key({ modkey            }, "l", function () awful.util.spawn("xlock") end)
+    awful.key({ modkey            }, "l", function () awful.util.spawn("xscreensaver-command -lock") end)
 )
 
 clientkeys = awful.util.table.join(

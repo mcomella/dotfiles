@@ -26,6 +26,7 @@ alias dl="cd ~/Downloads"
 alias sb="cd ~/dev/sb"
 
 # Misc
+alias xlock="xscreensaver-command -lock"
 alias a="ant"
 alias c="ctags -R"
 alias d="gdb"
