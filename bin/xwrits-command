@@ -3,7 +3,7 @@
 # TODO: Should these be declared local variables?
 NAME="xwrits-command"
 
-CONF_PATH="/home/$USER/.xwrits"
+CONF_PATH="/home/$(whoami)/.xwrits"
 MICRO_PATH="$CONF_PATH/micro"
 MACRO_PATH="$CONF_PATH/macro"
 
