@@ -3,9 +3,10 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory histignorealldups
 
-unsetopt autocd beep
+setopt autocd dvorak
+unsetopt beep
 
-bindkey -v
+bindkey -v # vi bindings
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/mcomella/.zshrc'
