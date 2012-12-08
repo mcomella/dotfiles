@@ -41,7 +41,6 @@ alias rmf="rm -f"
 alias suspend="sudo pm-suspend && xlock"
 alias u="fg" # For ergo reasons.
 alias xl="xlock"
-alias xwrits-comm="xwrits-command"
 alias v="view"
 alias vocab="vim ~/Dropbox/Documents/vocab.txt"
 
