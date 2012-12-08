@@ -92,7 +92,7 @@ theme.layout_dwindle =    layout_dir .. "dwindlew.png"
 theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
 
 -- Wallpaper --
-bg_dir = config_dir .. "themes/bg/"
+bg_dir = config_dir .. "bg/"
 bg = bg_dir .. "bg.jpg"
 bg_tall = bg_dir .. "bg_tall.jpg"
 theme.wallpaper_cmd = { "feh --bg-scale " .. bg .. " " .. bg_tall }
