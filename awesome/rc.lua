@@ -362,9 +362,9 @@ awful.rules.rules = {
     { rule = { class = "gimp" },
       properties = { floating = true } },
     { rule = { class = "Xchat" },
-      properties = { tag = tags[2][4] } },
+      properties = { tag = tags[screen.count()][4] } },
     { rule = { class = "Rhythmbox" },
-      properties = { tag = tags[2][3] } }
+      properties = { tag = tags[screen.count()][3] } }
 }
 -- }}}
 
