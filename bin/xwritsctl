@@ -1,9 +1,9 @@
 #!/bin/zsh
 
 # TODO: Should these be declared local variables?
-NAME="xwrits-command"
+NAME="xwritsctl"
 
-CONF_PATH="/home/$(whoami)/.xwrits"
+CONF_PATH="/home/$(whoami)/.config/$(whoami)/xwrits"
 MICRO_PATH="$CONF_PATH/micro"
 MACRO_PATH="$CONF_PATH/macro"
 
@@ -18,19 +18,19 @@ _run () {
 # TODO: Loop to find multiple images for each level.
 # TODO: Currently assumes these directories and files exist. Fix that.
 # Micro
-  xwrits typetime=5 breaktime=:30 title=Micro \
+  xwrits typetime=5 breaktime=:30 idle=4 -multiscreen title=Micro \
       warning-picture="$MICRO_PATH/warning.gif" \
       rest-picture="$MICRO_PATH/rest.gif" \
       ready-picture="$MICRO_PATH/ready.gif" \
-      +multiscreen after=:30 +multiply=:5 \
+      after=:30 +multiply=:5 \
       &
 
 # Macro
-  xwrits typetime=55 breaktime=5 title=Macro \
+  xwrits typetime=30 breaktime=5 idle=5 -multiscreen title=Macro \
       warning-picture="$MACRO_PATH/warning.gif" \
       rest-picture="$MACRO_PATH/rest.gif" \
       ready-picture="$MACRO_PATH/ready.gif" \
-      +multiscreen after=2 +multiply=1 \
+      after=2 +multiply=1 \
       &
 }
 

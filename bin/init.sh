@@ -4,4 +4,4 @@
 
 echo "Setting up bin configuration:"
 
-linkOrWarn bin/xwrits-command ~/bin/xwrits-command
+linkOrWarn bin/xwritsctl ~/bin/xwritsctl
