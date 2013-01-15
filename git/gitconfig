@@ -39,6 +39,9 @@
 [github]
 	user = mcomella
 
+[push]
+	default = simple
+
 [user]
 	name = Michael Comella
 	email = michael.l.comella@gmail.com
