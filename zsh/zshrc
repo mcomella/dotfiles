@@ -21,7 +21,7 @@ which dircolors &> /dev/null && if [ -f $HOME/.dircolors ]; then
 fi
 
 # Setting umask
-umask 007
+umask 077
 
 # Update default editor
 export EDITOR=vim
