@@ -22,13 +22,14 @@ alias l='ls -CF'
 
 # cd
 alias db="cd ~/Dropbox"
-alias dl="cd ~/Downloads"
+alias dl="cd ~/dl"
 alias sb="cd ~/dev/sb"
 
 # Misc
 alias xlock="xscreensaver-command -lock"
 
 alias a="ant"
+alias anki="anki -b ~/.anki"
 alias c="ctags -R"
 alias d="gdb"
 alias e="vim"
@@ -36,9 +37,11 @@ alias ff="find . | xargs grep"
 alias fx="firefox"
 alias g="git"
 alias info="info --vi-keys"
-alias m="make -j12"
+alias m="make -j9"
 alias mcm="m clean && m"
+alias pac="pacman-color"
 alias rmf="rm -f"
+alias spac="sudo pacman-color"
 alias suspend="sudo pm-suspend && xlock"
 alias u="fg" # For ergo reasons.
 alias xl="xlock"
