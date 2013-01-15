@@ -74,10 +74,14 @@
 *color15: S_base3
 
 !! GENERIC !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Solarized dark
 *background: S_base03
 *foreground: S_base0
-!*fading: 0
-!*fadeColor: S_base03
+!! Solarized light
+!*background: S_base3
+!*foreground: S_base00
+
+*fading: 0
 *cursorColor: S_base1
 *pointerColorBackground:S_base01
 *pointerColorForeground:S_base1
@@ -96,10 +100,6 @@ xclock*minorColor: S_base0
 Xft.antialias: true
 
 !! URXVT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!! Real transparency - Disable until Xinerama supports compositing.
-!urxvt*depth: 32
-!urxvt*background: [95]S_base03
-
 !! Fake transparency
 urxvt*transparent: true
 urxvt*tintColor: S_base03
@@ -108,7 +108,12 @@ urxvt*shading: 100
 urxvt*foreground: S_base0
 urxvt*font: xft:Inconsolata-dz:Medium:size=12
 urxvt*cursorBlink: true
+
 urxvt*scrollBar: false
+urxvt*skipScroll: true
+
+urxvt*urgentOnBell: false
+urxvt*visualBell: false
 
 urxvt*inputMethod: ibus
 urxvt.preeditType: OverTheSpot
