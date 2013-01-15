@@ -1,4 +1,4 @@
--- Awesome v3.5
+-- Awesome v3.4.11
 
 config_dir = "/home/mcomella/.config/awesome/"
 install_dir = "/usr/share/awesome/"
@@ -98,7 +98,7 @@ theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
 wallpaper_dir = config_dir .. "bg/"
 bg_left = wallpaper_dir .. "left.jpg"
 bg_right = wallpaper_dir .. "right.jpg"
-theme.wallpaper = "feh --bg-scale " .. bg_left .. " " .. bg_right
+theme.wallpaper_cmd = { "feh --bg-scale " .. bg_left .. " " .. bg_right }
 
 -- Titlebar icons --
 titlebar_dir = install_dir .. "themes/default/titlebar/"
