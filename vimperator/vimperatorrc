@@ -1,3 +1,7 @@
+colorscheme large
+" Items which are completed at :open prompts
 set complete="lf"
-
+" Editor (^i) command
 set editor=~/bin/external_editor
+" Hint character order (dvorak home row)
+set hintchars="hutenosa"
