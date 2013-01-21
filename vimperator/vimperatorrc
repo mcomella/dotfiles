@@ -1,4 +1,4 @@
-colorscheme large
+colorscheme solarized
 " Items which are completed at :open prompts
 set complete="lf"
 " Editor (^i) command
