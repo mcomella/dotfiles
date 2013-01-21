@@ -1,9 +1,11 @@
-" Defaults
+hi clear
+
+" Defaults (for reference)
 hi! Hint monospace; font-weight:bold; text-transform: uppercase; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px
-hi! HintImage opacity:.4
 
 " Make the text more readable
 hi! Hint -append font-size:13px
+hi! HintImage opacity:.4
 
 " ---------------------------------------------------------------------
 " COLOR VALUES
