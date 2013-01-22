@@ -1,12 +1,4 @@
 hi clear
-
-" Defaults (for reference)
-hi! Hint monospace; font-weight:bold; text-transform: uppercase; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px
-
-" Make the text more readable
-hi! Hint -append font-size:13px
-hi! HintImage opacity:.4
-
 " ---------------------------------------------------------------------
 " COLOR VALUES
 " ---------------------------------------------------------------------
@@ -34,10 +26,15 @@ hi! HintImage opacity:.4
 " cyan #2aa198 6/6 cyan 37 #00afaf 60 -35 -05 42 161 152 175 74 63
 " green #859900 2/2 green 64 #5f8700 60 -20 65 133 153 0 68 100 60
 
+" Defaults (for reference)
+hi! Hint font-family: mono; font-weight:bold; text-transform: uppercase; padding: 0px 1px 0px 1px
+
+" Make the hints more readable
 " background-color: base03; color: base1 (solarized dark)
-hi! Hint -append background-color: #002b36; color: #93a1a1
+hi! Hint -append background-color: #002b36; color: #93a1a1; font-size:12px; border: 1px solid #268bd2
 " background-color: base3; color: base00 (solarized light)
 hi! HintElem background-color: #fdf6e3; color: #657b83
+hi! HintImage opacity:.4
 
 " background-color: base03; color: base1 (solarized dark)
 hi! PromptText background-color: #002b36; color: #93a1a1
