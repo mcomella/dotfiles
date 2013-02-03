@@ -19,3 +19,5 @@ fi
 gitCloneOrWarn solarized git://github.com/altercation/vim-colors-solarized.git \
         HEAD ~/.vim/bundle/vim-colors-solarized
 gitCloneOrWarn tagbar git://github.com/majutsushi/tagbar.git HEAD ~/.vim/bundle/tagbar
+gitCloneOrWarn vim-coffee-script git://github.com/kchmck/vim-coffee-script.git \
+        HEAD ~/.vim/bundle/vim-coffee-script
