@@ -1,43 +1,59 @@
+function HighlightWhitespace()
+    " from http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+    highlight ExtraWhitespace ctermbg=red guibg=red
+    match ExtraWhitespace /\s\+$/
+    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+    autocmd BufWinLeave * call clearmatches()
+endfunction
+
+function SetColorColumn(pos)
+    if exists('+colorcolumn')
+        execute "set colorcolumn=".a:pos
+    endif
+endfunction
+
+function SetIndentSpaceLen(len)
+    execute "set shiftwidth=".a:len
+    execute "set softtabstop=".a:len
+    execute "set tabstop=".a:len
+endfunction
+
+function SetupGitCommit()
+    call SetColorColumn(72)
+    set textwidth=72
+endfunction
+
+function SetupTxt()
+    setlocal spell spelllang=en_us
+endfunction
+
 " Plugins
 call pathogen#infect()
-" Open tagbar automatically on vim startup for supported file types.
-autocmd VimEnter * nested :call tagbar#autoopen(1)
+if exists('+tagbar#autoopen')
+    autocmd VimEnter * nested :call tagbar#autoopen(1) " Supported file types.
+    nmap <F8> :TagbarToggle<CR>
+endif
 
 " Set physical tools
+call SetColorColumn(80)
 set cursorline
+filetype plugin indent on " Indentation. Alternative: smartindent.
 set number
-filetype plugin indent on " Should fix # comments
-"set smartindent
-set t_Co=16
+set ruler " Line/column numbers at the bottom.
 
-" Set visual tools
-set colorcolumn=81
-set ruler
+set expandtab
+call SetIndentSpaceLen(4)
 
 " Colors
+set t_Co=16 " Number of available terminal colors.
 syntax on
 set background=dark
 let g:solarized_termtrans = 1
 colorscheme solarized
 highlight visual ctermfg=13 " Violet
-
-" Highlight whitespace
-" from http://vim.wikia.com/wiki/Highlight_unwanted_spaces
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-
-" Change shift/tab values
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-
-" Keybindings
-nmap <F8> :TagbarToggle<CR>
+call HighlightWhitespace()
 
 " Saved macros
 let @d='o// TODO: '
@@ -45,31 +61,8 @@ let @g='o// *** *** //BBhi '
 let @h="o/79a*o*** o79i*A/ka"
 
 " Filetype specific settings
-au BufNewFile,BufRead *.xml*,*.rdf,*.rej call SetupColorColumnNone()
-au BufNewFile,BufRead *.java* call SetupColorColumnOneHundred()
-au BufNewFile,BufRead *.coffee*,*.js*,*.html*,*.md* call SetupTwoSpace()
+au BufNewFile,BufRead *.xml*,*.rdf,*.rej call SetColorColumn(0)
+au BufNewFile,BufRead *.java* call SetColorColumn(100)
+au BufNewFile,BufRead *.css*,*.js*,*.html*,*.md* call SetIndentSpaceLen(2)
 au BufNewFile,BufRead *.txt call SetupTxt()
 au BufNewFile,BufRead .git/COMMIT_EDITMSG call SetupGitCommit()
-
-function SetupColorColumnNone()
-    set colorcolumn=0
-endfunction
-
-function SetupColorColumnOneHundred()
-    set colorcolumn=101
-endfunction
-
-function SetupTwoSpace()
-    set shiftwidth=2
-    set softtabstop=2
-    set tabstop=2
-endfunction
-
-function SetupTxt()
-    setlocal spell spelllang=en_us
-endfunction
-
-function SetupGitCommit()
-    set colorcolumn=73
-    set textwidth=73
-endfunction
