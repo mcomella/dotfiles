@@ -16,6 +16,8 @@ if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
             https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 fi
 
+gitCloneOrWarn indent-guides git://github.com/nathanaelkane/vim-indent-guides.git \
+        HEAD ~/.vim/bundle/vim-indent-guides
 gitCloneOrWarn solarized git://github.com/altercation/vim-colors-solarized.git \
         HEAD ~/.vim/bundle/vim-colors-solarized
 gitCloneOrWarn tagbar git://github.com/majutsushi/tagbar.git HEAD ~/.vim/bundle/tagbar

@@ -29,12 +29,30 @@ function SetupTxt()
     setlocal spell spelllang=en_us
 endfunction
 
+function PluginIndentGuides()
+    " TODO: Do not enable if not available.
+    "if !exists('IndentGuidesToggle')
+    "    return 1
+    "endif
+    let g:indent_guides_enable_on_vim_startup = 1
+    let g:indent_guides_space_guides = 1
+    let g:indent_guides_start_level = 2
+    let g:indent_guides_guide_size = 1
+    let g:indent_guides_auto_colors = 0
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=0 " base 02
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0 " base 02
+endfunction
+
+function PluginTagbar()
+    " TODO: Do not enable if not available.
+    autocmd VimEnter * nested :call tagbar#autoopen(1)
+    nmap <F8> :TagbarToggle<CR>
+endfunction
+
 " Plugins
 call pathogen#infect()
-if exists('+tagbar#autoopen')
-    autocmd VimEnter * nested :call tagbar#autoopen(1) " Supported file types.
-    nmap <F8> :TagbarToggle<CR>
-endif
+call PluginIndentGuides()
+call PluginTagbar()
 
 " Set physical tools
 call SetColorColumn(80)
