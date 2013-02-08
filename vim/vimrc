@@ -55,6 +55,7 @@ call PluginIndentGuides()
 call PluginTagbar()
 
 " Set physical tools
+set backspace=indent,eol,start " Equivalent to backspace=2.
 call SetColorColumn(80)
 set cursorline
 filetype plugin indent on " Indentation. Alternative: smartindent.
