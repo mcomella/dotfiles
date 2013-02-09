@@ -21,7 +21,7 @@ function SetIndentSpaceLen(len)
 endfunction
 
 function SetupGitCommit()
-    call SetColorColumn(72)
+    call SetColorColumn(73)
     set textwidth=72
 endfunction
 
@@ -56,7 +56,7 @@ call PluginTagbar()
 
 " Set physical tools
 set backspace=indent,eol,start " Equivalent to backspace=2.
-call SetColorColumn(80)
+call SetColorColumn(81)
 set cursorline
 filetype plugin indent on " Indentation. Alternative: smartindent.
 set number
