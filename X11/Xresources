@@ -121,3 +121,6 @@ urxvt.preeditType: OverTheSpot
 !! ANKI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 anki*background: S_base3
 anki*foreground: S_base00
+
+!! XPDF !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+xpdf.paperColor: S_base3
