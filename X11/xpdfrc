@@ -1,4 +1,4 @@
-continuousView no
+continuousView yes
 initialZoom width
 
 bind m any zoomFitHeight
