@@ -1,6 +1,8 @@
 continuousView no
 initialZoom width
 
+bind m any zoomFitHeight
+
 bind h any scrollLeft(16)
 bind l any scrollRight(16)
 bind k any scrollUp(64)
