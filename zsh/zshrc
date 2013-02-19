@@ -7,7 +7,7 @@ setopt autocd dvorak
 unsetopt beep
 
 bindkey -v # vi bindings
-bindkey -s '' 'fg' # ctrl-Z to fg.
+bindkey -s '' 'fg vim' # ctrl-Z to 'fg vim'.
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/mcomella/.zshrc'
