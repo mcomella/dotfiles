@@ -1,0 +1,4 @@
+escape ^_- # Bind escape to to '-'.
+
+autodetach on
+startup_message off
