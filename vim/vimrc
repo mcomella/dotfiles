@@ -75,6 +75,10 @@ set ruler " Line/column numbers at the bottom.
 set expandtab
 call SetIndentSpaceLen(4)
 
+" Remap
+map <Leader>c :set ignorecase!<CR>
+map <Leader>h :set hlsearch!<CR>
+map <Leader>p :set paste!<CR>
 
 " Saved macros
 let @d='o// TODO: '
