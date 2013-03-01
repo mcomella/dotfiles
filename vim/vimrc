@@ -54,6 +54,15 @@ call pathogen#infect()
 call PluginIndentGuides()
 call PluginTagbar()
 
+" Colors
+set t_Co=16 " Number of available terminal colors.
+syntax on
+set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized
+highlight visual ctermfg=13 " Violet
+call HighlightWhitespace()
+
 " Set physical tools
 call SetColorColumn(80)
 filetype plugin indent on " Indentation. Alternative: smartindent.
@@ -66,14 +75,6 @@ set ruler " Line/column numbers at the bottom.
 set expandtab
 call SetIndentSpaceLen(4)
 
-" Colors
-set t_Co=16 " Number of available terminal colors.
-syntax on
-set background=dark
-let g:solarized_termtrans = 1
-colorscheme solarized
-highlight visual ctermfg=13 " Violet
-call HighlightWhitespace()
 
 " Saved macros
 let @d='o// TODO: '
