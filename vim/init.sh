@@ -23,3 +23,4 @@ gitCloneOrWarn solarized git://github.com/altercation/vim-colors-solarized.git \
 gitCloneOrWarn tagbar git://github.com/majutsushi/tagbar.git HEAD ~/.vim/bundle/tagbar
 gitCloneOrWarn vim-coffee-script git://github.com/kchmck/vim-coffee-script.git \
         HEAD ~/.vim/bundle/vim-coffee-script
+gitCloneOrWarn ctrlp https://github.com/kien/ctrlp.vim.git HEAD ~/.vim/bundle/ctrlp
