@@ -1,47 +1,46 @@
 [alias]
-	a = add
-	ai = add --interactive
-	b = branch
-	c = commit
-	co = checkout
-	d = diff
-	ds = diff --staged
-	# diff that highlights the changed lines, and ALSO changed words and chars
-	# git wds does the same for staged changes.
-	dw = diff --color-words
-	dws = diff --color-words --staged
-	loa = log --pretty=oneline --abbrev-commit --graph --decorate --color --all
-	lob = log --pretty=oneline --abbrev-commit --graph --decorate --color --branches
-	lol = log --pretty=oneline --abbrev-commit --decorate --color
-	lop = log -p
-	ls = ls-files
-        pl = pull
-        ps = push
-        st = stash
-	s = status -s
-	ss = status
-	unstage = reset HEAD
-	uncommit = reset --soft # include a hash at the end!
-	amend = commit --amend
-	wc = whatchanged
-	ls-ignored = ls-files --exclude-standard --ignored --others
+    a = add
+    b = branch
+    c = commit
+    co = checkout
+    d = diff
+    ds = diff --staged
+    # diff that highlights the changed lines, and ALSO changed words and chars
+    # git wds does the same for staged changes.
+    dw = diff --color-words
+    dws = diff --color-words --staged
+    loa = log --pretty=oneline --abbrev-commit --graph --decorate --color --all
+    lob = log --pretty=oneline --abbrev-commit --graph --decorate --color --branches
+    lol = log --pretty=oneline --abbrev-commit --decorate --color
+    lop = log -p
+    ls = ls-files
+    pl = pull
+    ps = push
+    r = rebase
+    st = stash
+    s = status -s
+    ss = status
+    unstage = reset HEAD
+    uncommit = reset --soft # include a hash at the end!
+    wc = whatchanged
+    ls-ignored = ls-files --exclude-standard --ignored --others
 
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
 
 [color]
-	ui = true
+    ui = true
 [color "diff"]
-	new = green
-	old = red
-	whitespace = red reverse
+    new = green
+    old = red
+    whitespace = red reverse
 
 [github]
-	user = mcomella
+    user = mcomella
 
 [push]
-	default = simple
+    default = simple
 
 [user]
-	name = Michael Comella
-	email = michael.l.comella@gmail.com
+    name = Michael Comella
+    email = michael.l.comella@gmail.com
