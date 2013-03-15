@@ -6,8 +6,9 @@ echo "Setting up vim configuration:"
 
 linkOrWarn vim/vimrc ~/.vimrc
 
-# Plugin dir
+# Dir.
 mkdir -p ~/.vim/autoload ~/.vim/bundle
+mkdir -p ~/.vim/scripts
 
 # Pathogen
 if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
@@ -24,3 +25,4 @@ gitCloneOrWarn tagbar git://github.com/majutsushi/tagbar.git HEAD ~/.vim/bundle/
 gitCloneOrWarn vim-coffee-script git://github.com/kchmck/vim-coffee-script.git \
         HEAD ~/.vim/bundle/vim-coffee-script
 gitCloneOrWarn ctrlp https://github.com/kien/ctrlp.vim.git HEAD ~/.vim/bundle/ctrlp
+gitCloneOrWarn closetag https://github.com/vim-scripts/closetag.vim HEAD ~/.vim/scripts/closetag.vim

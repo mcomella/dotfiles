@@ -91,3 +91,5 @@ au BufNewFile,BufRead *.java* call SetColorColumn(99)
 au BufNewFile,BufRead *.coffee*,*.css*,*.js*,*.html*,*.md* call SetIndentSpaceLen(2)
 au BufNewFile,BufRead *.txt call SetupTxt()
 au BufNewFile,BufRead .git/COMMIT_EDITMSG call SetupGitCommit()
+
+au Filetype html,xml,xsl source ~/.vim/scripts/closetag.vim/plugin/closetag.vim
