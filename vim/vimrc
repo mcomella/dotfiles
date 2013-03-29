@@ -89,7 +89,7 @@ let @h="o/79a*o*** o79i*A/ka"
 " Filetype specific settings
 au BufNewFile,BufRead *.xml*,*.rdf,*.rej call SetColorColumn(0)
 au BufNewFile,BufRead *.java* call SetColorColumn(99)
-au BufNewFile,BufRead *.coffee*,*.css*,*.js*,*.html*,*.md* call SetIndentSpaceLen(2)
+au BufNewFile,BufRead *.coffee*,*.css*,*.js*,*.html* call SetIndentSpaceLen(2)
 au BufNewFile,BufRead *.txt call SetupTxt()
 au BufNewFile,BufRead .git/COMMIT_EDITMSG call SetupGitCommit()
 
