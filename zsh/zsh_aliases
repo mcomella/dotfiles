@@ -1,19 +1,19 @@
 # Color support of ls and grep
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias ls="ls --color=auto"
+    #alias dir="dir --color=auto"
+    #alias vdir="vdir --color=auto"
 fi
 
 # Add flags by default.
 alias anki="anki -b ~/.anki"
-alias cp='cp -i'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias grep='grep --color=auto'
-alias mv='mv -i'
-alias rm='rm -i'
+alias cp="cp -i"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias grep="grep --color=auto"
+alias mv="mv -i"
+alias rm="rm -i"
 
 # Shorten.
 alias a="ant"
@@ -26,9 +26,9 @@ alias ff="find . | xargs grep"
 alias fx="firefox"
 alias g="git"
 alias info="info --vi-keys"
-alias la='ls -A'
-alias ll='ls -alF'
-alias l='ls -CF'
+alias la="ls -A"
+alias ll="ls -alF"
+alias l="ls -CF"
 alias mcm="m clean && m"
 alias m="make -j9"
 alias pac="pacman-color"
