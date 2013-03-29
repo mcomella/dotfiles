@@ -17,6 +17,7 @@
     pl = pull
     ps = push
     r = rebase
+    rem = remote
     st = stash
     s = status -s
     ss = status
