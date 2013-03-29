@@ -6,47 +6,38 @@ if [ -x /usr/bin/dircolors ]; then
     #alias vdir='vdir --color=auto'
 fi
 
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-# Safety flags
+# Add flags by default.
+alias anki="anki -b ~/.anki"
 alias cp='cp -i'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
 alias mv='mv -i'
 alias rm='rm -i'
 
-# ls
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# cd
-alias db="cd ~/Dropbox"
-alias dl="cd ~/dl"
-alias sb="cd ~/dev/sb"
-
-# Misc
-alias xlock="xscreensaver-command -lock"
-
+# Shorten.
 alias a="ant"
-alias anki="anki -b ~/.anki"
 alias c="ctags -R"
+alias db="cd ~/Dropbox"
 alias d="gdb"
+alias dl="cd ~/dl"
 alias e="vim"
 alias ff="find . | xargs grep"
 alias fx="firefox"
 alias g="git"
 alias info="info --vi-keys"
-alias m="make -j9"
+alias la='ls -A'
+alias ll='ls -alF'
+alias l='ls -CF'
 alias mcm="m clean && m"
+alias m="make -j9"
 alias pac="pacman-color"
-alias rmf="rm -f"
+alias sb="cd ~/dev/sb"
 alias spac="sudo pacman-color"
 alias suspend="sudo pm-suspend && xlock"
 alias u="fg" # For ergo reasons.
-alias xl="xlock"
 alias v="view"
-alias vocab="vim ~/Dropbox/Documents/vocab.txt"
+alias xl="xscreensaver-command -lock"
 
 # Fennec
 alias f_push="adb install dist/fennec*.apk"
