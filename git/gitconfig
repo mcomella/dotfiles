@@ -9,10 +9,11 @@
     # git wds does the same for staged changes.
     dw = diff --color-words
     dws = diff --color-words --staged
-    loa = log --pretty=oneline --abbrev-commit --graph --decorate --color --all
+    f = fetch
+    l = log --pretty=oneline --abbrev-commit --graph --decorate --color --all
+    lp = log -p
     lob = log --pretty=oneline --abbrev-commit --graph --decorate --color --branches
     lol = log --pretty=oneline --abbrev-commit --decorate --color
-    lop = log -p
     ls = ls-files
     pl = pull
     ps = push
