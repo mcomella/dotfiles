@@ -26,3 +26,4 @@ gitCloneOrWarn vim-coffee-script git://github.com/kchmck/vim-coffee-script.git \
         HEAD ~/.vim/bundle/vim-coffee-script
 gitCloneOrWarn ctrlp https://github.com/kien/ctrlp.vim.git HEAD ~/.vim/bundle/ctrlp
 gitCloneOrWarn closetag https://github.com/vim-scripts/closetag.vim HEAD ~/.vim/scripts/closetag.vim
+gitCloneOrWarn vim-sleuth https://github.com/tpope/vim-sleuth HEAD ~/.vim/bundle/vim-sleuth
