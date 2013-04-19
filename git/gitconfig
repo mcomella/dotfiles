@@ -40,7 +40,7 @@
     user = mcomella
 
 [push]
-    default = simple
+    default = current
 
 [user]
     name = Michael Comella
