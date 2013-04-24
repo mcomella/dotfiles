@@ -55,6 +55,7 @@ call pathogen#infect()
 call PluginIndentGuides()
 call PluginTagbar()
 let g:vim_markdown_folding_disabled=1 " github.com/plasticboy/vim-markdown
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|venv)$'
 
 " Colors
 set t_Co=16 " Number of available terminal colors.
