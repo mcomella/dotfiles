@@ -10,7 +10,8 @@
     dw = diff --color-words
     dws = diff --color-words --staged
     f = fetch
-    l = log --pretty=oneline --abbrev-commit --graph --decorate --color --all
+    l = log --pretty=oneline --abbrev-commit --graph --decorate --color --all -n 40
+    ll = log --pretty=oneline --abbrev-commit --graph --decorate --color --all
     lp = log -p
     lob = log --pretty=oneline --abbrev-commit --graph --decorate --color --branches
     lol = log --pretty=oneline --abbrev-commit --decorate --color
