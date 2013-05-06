@@ -23,6 +23,7 @@
     st = stash
     s = status -s
     ss = status
+    sub = submodule
     unstage = reset HEAD
     uncommit = reset --soft # include a hash at the end!
     wc = whatchanged
