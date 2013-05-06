@@ -82,6 +82,8 @@ set splitbelow " More natural splits.
 set splitright
 
 " Remap
+command Wq wq
+command Qa qa
 map <Leader>c :set ignorecase!<CR>
 map <Leader>h :set hlsearch!<CR>
 map <Leader>p :set paste!<CR>
