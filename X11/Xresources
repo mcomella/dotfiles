@@ -112,7 +112,7 @@ urxvt*cursorBlink: true
 urxvt*scrollBar: false
 urxvt*skipScroll: true
 
-urxvt*urgentOnBell: false
+urxvt*urgentOnBell: true
 urxvt*visualBell: false
 
 urxvt*inputMethod: ibus
