@@ -54,15 +54,17 @@ alias xl="xscreensaver-command -lock"
 alias xxx="startx; exit"
 
 # Fennec
-alias f_push="adb install dist/fennec*.apk"
-alias f_cpush="adb uninstall org.mozilla.fennec_mcomella && \
-               adb install dist/fennec*.apk"
-alias f_pbuild="rm -rf mobile/android/base && make -C mobile/android && make package" # p = Partial
-alias f_cpbuild="f_pbuild && f_cpush"
-
-alias f_bs="adb push ../mobile/android/chrome/content /sdcard/bootstrapper/content/"
-
-alias f_log="adb logcat -v time"
+alias mb="mach build"
+alias mba="mb mobile/android"
+alias mbab="mb mobile/android/base"
+alias mp="mach package"
+alias mi="mach install"
+alias ma="mb && mp && mi"
+alias maa="mba && mp && mi"
+alias maab="mbab && mp && mi"
+alias rcb="mach build build/mobile/robocop"
+alias rci="make -C obj-android mochitest-robocop"
+alias rc="rcb && rci"
 
 # Local config
 if [ -f $HOME/.zsh_aliases_local ]; then
