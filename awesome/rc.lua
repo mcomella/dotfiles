@@ -75,7 +75,7 @@ if beautiful.wallpaper then awful.util.spawn(beautiful.wallpaper) end
 tags = {
   settings = {
     { names = { "web", "8", "9", "0" },
-      layout = { layouts[3], layouts[3], layouts[3], layouts[3] }
+      layout = { layouts[3], layouts[3], layouts[3], layouts[7] }
     },
     { names = { "7", "8", "mus", "irc" },
       layout = { layouts[5], layouts[5], layouts[5], layouts[5] }
@@ -370,6 +370,8 @@ awful.rules.rules = {
     { rule = { class = "Xchat" },
       properties = { tag = tags[screen.count()][4] } },
     { rule = { instance = "irssi" },
+      properties = { tag = tags[screen.count()][4] } },
+    { rule = { class = "Thunderbird" },
       properties = { tag = tags[screen.count()][4] } }
 }
 -- }}}
