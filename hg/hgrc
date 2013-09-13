@@ -44,10 +44,18 @@ showfunc = 1
 unified = 8
 
 [extensions]
+bzexport = /home/mcomella/.mozbuild/mercurial/extensions/bzexport
 color =
-crecord = ~/Dropbox/dev/hgext/crecord
-hgext.mq =
+crecord = /home/mcomella/dev/crecord/crecord
+mozext = /home/mcomella/dev/hgext-gecko-dev
+mq =
+mqext = /home/mcomella/.mozbuild/mercurial/extensions/mqext
+pager =
+progress =
 purge =
+qimportbz = /home/mcomella/.mozbuild/mercurial/extensions/qimportbz
+rebase =
+record =
 
 # Extensions
 [color]
@@ -76,5 +84,16 @@ diff.inserted = green
 diff.changed = white
 diff.trailingwhitespace = red_background
 
+[hostfingerprints]
+bugzilla.mozilla.org = 45:77:35:fd:6f:2c:1c:c2:90:4b:f7:b4:4d:60:c6:97:c5:5c:47:27
+hg.mozilla.org = 10:78:e8:57:2d:95:de:7c:de:90:bd:22:e1:38:17:67:c5:a7:9c:14
+
 [mq]
 plain = True
+
+[mqext]
+mqcommit = auto
+
+[pager]
+attend = annotate, cat, d, diff, export, glog, help, l, ll, log, qdiff
+pager = LESS='FRX' less
