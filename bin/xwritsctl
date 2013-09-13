@@ -18,18 +18,12 @@ _run () {
 # TODO: Loop to find multiple images for each level.
 # TODO: Currently assumes these directories and files exist. Fix that.
 # Micro
-  xwrits typetime=5 breaktime=:30 idle=4 -multiscreen title=Micro \
-      warning-picture="$MICRO_PATH/warning.gif" \
-      rest-picture="$MICRO_PATH/rest.gif" \
-      ready-picture="$MICRO_PATH/ready.gif" \
-      after=:30 +multiply=:5 \
+  xwrits typetime=10 breaktime=:30 idle=4 -multiscreen title=Micro \
+      after=:30 +multiply=:15 \
       &
 
 # Macro
-  xwrits typetime=30 breaktime=5 idle=5 -multiscreen title=Macro \
-      warning-picture="$MACRO_PATH/warning.gif" \
-      rest-picture="$MACRO_PATH/rest.gif" \
-      ready-picture="$MACRO_PATH/ready.gif" \
+  xwrits typetime=55 breaktime=5 idle=5 -multiscreen title=Macro \
       after=2 +multiply=1 \
       &
 }
