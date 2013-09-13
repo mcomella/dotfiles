@@ -6,7 +6,7 @@ echo "Setting up xchat configuration:"
 
 mkdir -p ~/.xchat2
 
-gitCloneOrWarn solarized git@github.com:jtmohr/xchat-colors-solarized.git \
+gitCloneOrWarn solarized https://github.com/jtmohr/xchat-colors-solarized.git \
         HEAD ~/.xchat2/xchat-colors-solarized
 
 # colors.conf
@@ -17,5 +17,5 @@ ln -s ~/.xchat2/xchat-colors-solarized/solarized-dark-colors.conf \
 
 # pevents.conf
 cp ~/.xchat2/pevents.conf ~/.xchat2/pevents.conf.bak && \
-    rm -f ~/.xchat2/colors.conf
+    rm -f ~/.xchat2/pevents.conf
 ln -s ~/.xchat2/xchat-colors-solarized/pevents.conf ~/.xchat2/pevents.conf
