@@ -65,4 +65,3 @@ if [ -f $HOME/.zshrc_local ]; then
   . $HOME/.zshrc_local
 fi
 
-export PATH=$HOME/bin:$PATH
