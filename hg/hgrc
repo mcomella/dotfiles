@@ -16,9 +16,21 @@ post-try = hg phase --force --draft "mq()"
 a = add
 co = checkout
 d = diff
+l = log -l 20
+ll = log
 pl = pull
+ps = push
+pt = pushtree
+qap = qapplied
+qi = qimport
+qps = qpush
+qcrec = qcrecord
+qcref = qcrefresh
+qs = qseries
 rm = remove
 s = status
+try = push -f ssh://hg.mozilla.org/try
+ts = treestatus
 
 [defaults]
 commit = -v
