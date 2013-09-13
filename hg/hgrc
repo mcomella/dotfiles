@@ -9,6 +9,9 @@ default = http://hg.mozilla.org/mozilla-central/
 # default-push = ssh://hg.mozilla.org/mozilla-central/
 try = ssh://hg.mozilla.org/try/
 
+[hooks]
+post-try = hg phase --force --draft "mq()"
+
 [alias]
 a = add
 co = checkout
