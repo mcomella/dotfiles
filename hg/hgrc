@@ -36,7 +36,7 @@ ts = treestatus
 commit = -v
 diff = -pU 8
 qdiff = -pU 8
-qnew = -Ue
+qnew = -U
 
 [diff]
 git = 1
