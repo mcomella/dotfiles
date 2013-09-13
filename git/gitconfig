@@ -1,8 +1,10 @@
 [alias]
     a = add
     b = branch
+    bl = blame
     c = commit
     co = checkout
+    cp = cherry-pick
     d = diff
     ds = diff --staged
     # diff that highlights the changed lines, and ALSO changed words and chars
@@ -16,10 +18,12 @@
     lob = log --pretty=oneline --abbrev-commit --graph --decorate --color --branches
     lol = log --pretty=oneline --abbrev-commit --decorate --color
     ls = ls-files
+    m = merge
     pl = pull
     ps = push
     r = rebase
     rem = remote
+    res = reset
     st = stash
     s = status -s
     ss = status
