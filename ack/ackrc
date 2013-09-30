@@ -1,0 +1,12 @@
+# TODO: Match first line too.
+--ignore-file=is:tags
+
+--pager=less
+
+--break
+--group
+
+--color
+--color-filename=underline green
+--color-lineno=yellow
+--color-match=magenta
