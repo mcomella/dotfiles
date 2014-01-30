@@ -96,6 +96,7 @@ map <Leader>p :set paste!<CR>
 let @d='o// TODO: '
 let @g='o// *** *** //BBhi '
 let @h="o/79a*o*** o79i*A/ka"
+let @l="oLog.d(\"lol\", \"\");2hi"
 
 " Filetype specific settings
 au BufNewFile,BufRead *.xml*,*.rdf,*.rej call SetColorColumn(0)
