@@ -76,6 +76,7 @@ set ignorecase
 set number " Enables current line number in relativenumber
 set relativenumber
 set ruler " Line/column numbers at the bottom.
+set wildmenu
 
 set expandtab
 "call SetIndentSpaceLen(4)
