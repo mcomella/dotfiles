@@ -72,6 +72,7 @@ filetype plugin indent on " Indentation. Alternative: smartindent.
 set backspace=indent,eol,start " Equivalent to backspace=2.
 set cursorline
 set hlsearch " Highlight search results.
+set ignorecase
 set number " Enables current line number in relativenumber
 set relativenumber
 set ruler " Line/column numbers at the bottom.
