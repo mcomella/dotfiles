@@ -14,27 +14,35 @@ post-try = hg phase --force --draft "mq()"
 
 [alias]
 a = add
+bz = bzexport
+bzn = bzexport
 co = checkout
 d = diff
 l = log -l 20
 ll = log
+l1 = l -pl 1
 pl = pull
 ps = push
 pt = pushtree
 qap = qapplied
 qi = qimport
+qibz = qimportbz
 qps = qpush
 qcrec = qcrecord
 qcref = qcrefresh
 qs = qseries
+rev = revert
 rm = remove
 s = status
+tc = trychooser
 try = push -f ssh://hg.mozilla.org/try
 ts = treestatus
 
 [defaults]
+bz = -e
 commit = -v
 diff = -pU 8
+qcrecord = -U
 qdiff = -pU 8
 qnew = -U
 
@@ -53,9 +61,11 @@ mqext = /home/mcomella/.mozbuild/mercurial/extensions/mqext
 pager =
 progress =
 purge =
+qbackout = /home/mcomella/dev/qbackout
 qimportbz = /home/mcomella/.mozbuild/mercurial/extensions/qimportbz
 rebase =
 record =
+trychooser = /home/mcomella/dev/trychooser/trychooser
 
 # Extensions
 [color]
@@ -95,5 +105,5 @@ plain = True
 mqcommit = auto
 
 [pager]
-attend = annotate, cat, d, diff, export, glog, help, l, ll, log, qdiff
+attend = annotate, cat, d, diff, export, glog, help, l, ll, l1, log, qdiff
 pager = LESS='FRX' less
