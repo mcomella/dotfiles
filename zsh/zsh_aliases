@@ -71,7 +71,6 @@ alias rci="make -C obj-android mochitest-robocop"
 alias rc="rcb && rci"
 
 alias mvnr="mvn surefire-report:report-only && firefox ./android-sync-instrumentation/target/site/surefire-report.html"
-alias fumvnr="fumvn surefire-report:report-only && firefox ./android-sync-instrumentation/target/site/surefire-report.html"
 
 # Local config
 if [ -f $HOME/.zsh_aliases_local ]; then
