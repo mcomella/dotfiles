@@ -21,7 +21,7 @@ alias rm="rm -i"
 # Shorten.
 alias a="ant"
 alias adbhelp="adb help 2>&1 | less"
-alias ag="ag --color-line-number='0;33' --color-path='4;32' --color-match='0;35' --pager less"
+alias -g ag="ag --color-line-number='0;33' --color-path='4;32' --color-match='0;35' --pager less"
 alias c="ctags -R"
 alias db="cd ~/Dropbox"
 alias d="gdb"
