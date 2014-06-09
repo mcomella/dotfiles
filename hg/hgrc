@@ -45,6 +45,7 @@ diff = -pU 8
 qcrecord = -U
 qdiff = -pU 8
 qnew = -U
+rev = --no-backup
 
 [diff]
 git = 1
