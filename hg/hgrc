@@ -35,7 +35,7 @@ rev = revert
 rm = remove
 s = status
 tc = trychooser
-try = push -f ssh://hg.mozilla.org/try
+try = push -f ssh://hg.mozilla.org/try && $HG qpop && $HG qrm try.patch
 ts = treestatus
 
 [defaults]
