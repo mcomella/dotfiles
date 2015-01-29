@@ -106,7 +106,7 @@ urxvt*tintColor: S_base03
 urxvt*shading: 100
 
 urxvt*foreground: S_base0
-urxvt*font: xft:Inconsolata-dz:Medium:size=12
+urxvt*font: xft:Inconsolata-dz:Medium:size=15
 urxvt*cursorBlink: true
 
 urxvt*scrollBar: false
