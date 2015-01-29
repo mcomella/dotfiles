@@ -2,28 +2,31 @@
 username = Michael Comella <michael.l.comella@gmail.com>
 merge = internal:merge
 
-[paths]
-default = http://hg.mozilla.org/mozilla-central/
-# NOTE: You probably want to add SSH user names when you finish this
-# See https://developer.mozilla.org/en/Mercurial_FAQ#How_do_I_check_stuff_in.3F
-# default-push = ssh://hg.mozilla.org/mozilla-central/
-try = ssh://hg.mozilla.org/try/
-
-[hooks]
-post-try = hg phase --force --draft "mq()"
-
 [alias]
 a = add
-bz = bzexport
-bzn = bzexport
-co = checkout
+b = bookmarks
+c = commit
+ca = commit --amend
 d = diff
-l = log -l 20
-ll = log
+he = histedit
+het = histedit 'first(ancestors(.) & draft())'
+l = log -Gl 8
+la = log -r "reverse(ancestors(.))"
+ll = log -G
 l1 = l -pl 1
 pl = pull
 ps = push
-pt = pushtree
+rev = revert
+rb = rebase
+rm = remove
+s = status
+sh = shelve
+try = push -f ssh://hg.mozilla.org/try && $HG qpop && $HG qrm try.patch
+u = update
+ush = unshelve
+
+# mq
+bz = bzexport
 qap = qapplied
 qi = qimport
 qibz = qimportbz
@@ -31,12 +34,6 @@ qps = qpush
 qcrec = qcrecord
 qcref = qcrefresh
 qs = qseries
-rev = revert
-rm = remove
-s = status
-tc = trychooser
-try = push -f ssh://hg.mozilla.org/try && $HG qpop && $HG qrm try.patch
-ts = treestatus
 
 [defaults]
 bz = -e
@@ -53,22 +50,31 @@ showfunc = 1
 unified = 8
 
 [extensions]
-bzexport = /home/mcomella/.mozbuild/mercurial/extensions/bzexport
-color =
-crecord = /home/mcomella/dev/crecord/crecord
-mozext = /home/mcomella/dev/hgext-gecko-dev
-mq =
+bzexport = /home/mcomella/.mozbuild/version-control-tools/hgext/bzexport
+bzpost = /home/mcomella/.mozbuild/version-control-tools/hgext/bzpost
+color = 
+crecord = ~/dev/crecord/crecord
+firefoxtree = /home/mcomella/.mozbuild/version-control-tools/hgext/firefoxtree
+hgwatchman = ~/dev/hgwatchman/hgwatchman
+histedit = 
+mq = 
 mqext = /home/mcomella/.mozbuild/mercurial/extensions/mqext
-pager =
-progress =
-purge =
-qbackout = /home/mcomella/dev/qbackout
-qimportbz = /home/mcomella/.mozbuild/mercurial/extensions/qimportbz
-rebase =
-record =
-trychooser = /home/mcomella/dev/trychooser/trychooser
+pager = 
+progress = 
+purge = 
+#qbackout = ~/.mozbuild/version-control-tools/hgext/qbackout
+qimportbz = /home/mcomella/.mozbuild/version-control-tools/hgext/qimportbz
+rebase = 
+record = 
+reviewboard = ~/.mozbuild/version-control-tools/hgext/reviewboard/client.py
+shelve =
+strip =
+#trychooser = ~/dev/trychooser/trychooser
 
 # Extensions
+[bugzilla]
+#username = michael.l.comella@gmail.com
+
 [color]
 mode = auto
 
@@ -96,8 +102,13 @@ diff.changed = white
 diff.trailingwhitespace = red_background
 
 [hostfingerprints]
-bugzilla.mozilla.org = 45:77:35:fd:6f:2c:1c:c2:90:4b:f7:b4:4d:60:c6:97:c5:5c:47:27
-hg.mozilla.org = 10:78:e8:57:2d:95:de:7c:de:90:bd:22:e1:38:17:67:c5:a7:9c:14
+bugzilla.mozilla.org = 47:13:a2:14:0c:46:45:53:12:0d:e5:36:16:a5:60:26:3e:da:3a:60
+bitbucket.org = 45:ad:ae:1a:cf:0e:73:47:06:07:e0:88:f5:cc:10:e5:fa:1c:f7:99
+hg.mozilla.org = af:27:b9:34:47:4e:e5:98:01:f6:83:2b:51:c9:aa:d8:df:fb:1a:27
+reviewboard-hg.mozilla.org = a6:13:ae:35:2c:20:2b:8d:f4:8d:8e:d7:a8:55:67:97
+
+[mozilla]
+ircnick = mcomella
 
 [mq]
 plain = True
@@ -106,5 +117,8 @@ plain = True
 mqcommit = auto
 
 [pager]
-attend = annotate, cat, d, diff, export, glog, help, l, ll, l1, log, qdiff
+attend = annotate, cat, d, diff, export, glog, help, l, la, ll, l1, log, qdiff
 pager = LESS='FRX' less
+
+[watchman]
+mode = off
