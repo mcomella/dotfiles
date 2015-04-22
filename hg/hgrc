@@ -8,21 +8,29 @@ b = bookmarks
 c = commit
 ca = commit --amend
 d = diff
+ds = diff --stat
+g = graft
+h = help
 he = histedit
 het = histedit 'first(ancestors(.) & draft())'
-l = log -Gl 8
-la = log -r "reverse(ancestors(.))"
-ll = log -G
-l1 = l -pl 1
+l = log -G
+lf = log -fr "ancestors(.) & draft()"
+lfp = log -fr "last(draft()^ & not draft())" -T "{rev}"
+l1 = log -pl 1 -r .
+lp = log -Gr "draft() + draft()^"
 pl = pull
 ps = push
+pr = push review -r .
+pf = push fx-team -r .
 rev = revert
 rb = rebase
+rbf = rebase -d fx-team
 rm = remove
 s = status
 sh = shelve
 try = push -f ssh://hg.mozilla.org/try && $HG qpop && $HG qrm try.patch
 u = update
+#uf = update -r !HG
 ush = unshelve
 
 # mq
@@ -117,7 +125,7 @@ plain = True
 mqcommit = auto
 
 [pager]
-attend = annotate, cat, d, diff, export, glog, help, l, la, ll, l1, log, qdiff
+attend = annotate, cat, d, diff, ds, export, glog, h, help, l, lf, ll, l1, log, lp, qdiff, s, shelve, sh
 pager = LESS='FRX' less
 
 [watchman]
