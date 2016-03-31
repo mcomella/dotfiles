@@ -1,3 +1,35 @@
+function Vundle() " https://github.com/VundleVim/Vundle.vim
+    set nocompatible              " be iMproved, required
+    filetype off                  " required
+
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin() "call vundle#begin('~/some/path/here')
+    Plugin 'VundleVim/Vundle.vim'
+
+    " The following are examples of different formats supported.
+    "Plugin 'tpope/vim-fugitive' " github
+    "Plugin 'L9' " vim-scripts.org
+    "Plugin 'git://git.wincent.com/command-t.git' " not github
+    "Plugin 'file:///home/gmarik/path/to/plugin' " local repo
+    "Plugin 'ascenator/L9', {'name': 'newL9'} " naming conflicts
+    Plugin 'altercation/vim-colors-solarized'
+    Plugin 'guns/vim-clojure-static'
+    Plugin 'majutsushi/tagbar'
+    Plugin 'nathanaelkane/vim-indent-guides'
+    Plugin 'tpope/vim-sleuth'
+
+    call vundle#end()
+    filetype plugin indent on    " required
+    " Brief help
+    " :PluginList       - lists configured plugins
+    " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+    " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+    " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+    "
+    " see :h vundle for more details or wiki for FAQ
+    " Put your non-Plugin stuff after this line
+endfunction
+
 function HighlightWhitespace()
     " from http://vim.wikia.com/wiki/Highlight_unwanted_spaces
     highlight ExtraWhitespace ctermbg=red guibg=red
@@ -30,10 +62,6 @@ function SetupTxt()
 endfunction
 
 function PluginIndentGuides()
-    " TODO: Do not enable if not available.
-    "if !exists('IndentGuidesToggle')
-    "    return 1
-    "endif
     let g:indent_guides_enable_on_vim_startup = 1
     let g:indent_guides_space_guides = 1
     let g:indent_guides_start_level = 2
@@ -45,20 +73,17 @@ function PluginIndentGuides()
 endfunction
 
 function PluginTagbar()
-    " TODO: Do not enable if not available.
-    autocmd VimEnter * nested :call tagbar#autoopen(1)
+    " autocmd VimEnter * nested :call tagbar#autoopen(1)
     nmap <F8> :TagbarToggle<CR>
 endfunction
 
-" Plugins
-call pathogen#infect()
-call PluginIndentGuides()
+
+" MAIN START
+call Vundle()
 call PluginTagbar()
-let g:vim_markdown_folding_disabled=1 " github.com/plasticboy/vim-markdown
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|venv)$'
 
 " Colors
-set t_Co=16 " Number of available terminal colors.
+"set t_Co=16 " Number of available terminal colors.
 syntax on
 set background=dark
 let g:solarized_termtrans = 1
@@ -68,7 +93,6 @@ call HighlightWhitespace()
 
 " Set physical tools
 call SetColorColumn(80)
-filetype plugin indent on " Indentation. Alternative: smartindent.
 set backspace=indent,eol,start " Equivalent to backspace=2.
 set cursorline
 set hlsearch " Highlight search results.
