@@ -77,18 +77,22 @@ function PluginTagbar()
     nmap <F8> :TagbarToggle<CR>
 endfunction
 
+function PluginSolarized()
+    set t_Co=16 " Number of available terminal colors.
+    let g:solarized_termtrans = 1
+    colorscheme solarized
+    highlight visual ctermfg=13 " Violet
+endfunction
+
 
 " MAIN START
 call Vundle()
 call PluginTagbar()
 
 " Colors
-"set t_Co=16 " Number of available terminal colors.
 syntax on
 set background=dark
-let g:solarized_termtrans = 1
-colorscheme solarized
-highlight visual ctermfg=13 " Violet
+call PluginSolarized()
 call HighlightWhitespace()
 
 " Set physical tools
