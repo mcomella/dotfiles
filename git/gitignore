@@ -24,6 +24,9 @@ tags
 .classpath
 .project
 
+# OS X
+.DS_Store
+
 # misc
 .nfs*
 *.db
