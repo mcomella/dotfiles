@@ -13,9 +13,6 @@ alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias grep="grep --color=auto"
 alias mv="mv -i"
-alias python2="python2 -tt"
-alias python3="python3 -tt"
-alias python="python -tt"
 alias rm="rm -i"
 
 # Shorten.
