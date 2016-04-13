@@ -129,6 +129,7 @@ let @l="oLog.d(\"lol\", \"\");2hi"
 
 " Filetype specific settings
 au BufNewFile,BufRead *.xml*,*.rdf,*.rej call SetColorColumn(0)
+au BufNewFile,BufRead *.gradle set filetype=groovy
 au BufNewFile,BufRead *.java* call SetColorColumn(99)
 au BufNewFile,BufRead *.jsm* set filetype=javascript
 au BufNewFile,BufRead *.md set textwidth=79
