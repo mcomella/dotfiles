@@ -11,7 +11,7 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle
 mkdir -p ~/.vim/scripts
 
 # Vundle. TODO: May not actually work.
-if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
+if [ ! -f ~/.vim/bundle/Vundle.vim ]; then
     gitCloneOrWarn Vundle.vim git://github.com/VundleVim/Vundle.vim.git \
         HEAD ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
