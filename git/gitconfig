@@ -3,6 +3,7 @@
     b = branch
     bl = blame
     c = commit
+    ca = commit --amend
     co = checkout
     cp = cherry-pick
     d = diff
@@ -12,17 +13,24 @@
     dw = diff --color-words
     dws = diff --color-words --staged
     f = fetch
-    l = log --pretty=oneline --abbrev-commit --graph --decorate --color --all -n 40
+    l = log --pretty=oneline --abbrev-commit --graph --decorate --color --all -n 35
     ll = log --pretty=oneline --abbrev-commit --graph --decorate --color --all
     lp = log -p
     lob = log --pretty=oneline --abbrev-commit --graph --decorate --color --branches
     lol = log --pretty=oneline --abbrev-commit --decorate --color
     ls = ls-files
     m = merge
+    mup = merge upstream/master
     pl = pull
     ps = push
-    r = rebase
+    psn = push --no-verify
+    rb = rebase
+    rbc = rebase --continue
+    rco = "!f() { git reset $1 && git checkout $1; }; f"
     rem = remote
+    remp = remote prune
+    rempo = remote prune origin
+    rempu = remote prune up
     res = reset
     st = stash
     s = status -s
