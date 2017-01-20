@@ -22,7 +22,7 @@ alias -g ag="ag --color-line-number='0;33' --color-path='4;32' --color-match='0;
 alias c="ctags -R"
 alias db="cd ~/Dropbox"
 alias d="gdb"
-alias dl="cd ~/dl"
+alias dl="cd ~/Downloads"
 alias e="vim"
 alias ff="find . -type f"
 alias ffj="ff -name \"*.java*\""
@@ -34,8 +34,6 @@ alias ghead="g log | head -n 1 | cut -f2 -d\" \" | xsel"
 alias -g grepc="grep --color=always"
 alias h="hg"
 alias -g hgep='hg export tip > /home/mcomella/dev/patches/"$($HG qapplied | tail -n 1)"'
-alias htry='hg push -f ssh://hg.mozilla.org/try && hg qpop && hg qrm try.patch'
-alias htryrc="hg qnew -m \"try: -b o -p android,android-armv6,android-noion,android-x86 -u robocop-1,robocop-2,robocop-3,robocop-4,robocop-5 -t none\" try.patch"
 alias info="info --vi-keys"
 alias kb="setxkbmap dvorak && setxkbmap -option ctrl:swapcaps"
 alias la="ls -A"
@@ -59,6 +57,9 @@ alias xl="xscreensaver-command -lock"
 alias xxx="startx; exit"
 
 # Mozilla
+alias cs="mach gradle checkstyle"
+alias hupfx="hg pull fx-team && hg update fx-team && hg bookmark build"
+alias alint="mach gradle app:lint"
 alias mb="mach build"
 alias mba="mb mobile/android"
 alias mbab="mb mobile/android/base"
@@ -69,11 +70,12 @@ alias mi="mach install"
 alias ma="mb && mp && mi"
 alias maa="mba && mp && mi"
 alias maab="mbab && mp && mi"
-alias manew="mb && mp && mach gradle"
+alias manew="mach clobber && mb && mp && gradlework"
 alias mar="mbr && mp && mi"
-alias me="mach build-backend --backend=AndroidEclipse"
+alias mg="mach gradle"
 alias rc="mach robocop"
 alias rcb="mach build build/mobile/robocop"
+alias htry='hg push-to-try -m "try: -b do -p android-api-15,android-x86,android-b2gdroid,android-api-15-frontend -u robocop -t none"'
 
 alias mvnr="mvn surefire-report:report-only && firefox ./android-sync-instrumentation/target/site/surefire-report.html"
 
