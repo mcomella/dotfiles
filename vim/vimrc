@@ -14,9 +14,11 @@ function Vundle() " https://github.com/VundleVim/Vundle.vim
     "Plugin 'ascenator/L9', {'name': 'newL9'} " naming conflicts
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'guns/vim-clojure-static'
+    Plugin 'kien/rainbow_parentheses.vim'
     Plugin 'lambdatoast/elm.vim'
     Plugin 'majutsushi/tagbar'
     Plugin 'nathanaelkane/vim-indent-guides'
+    Plugin 'toyamarinyon/vim-swift'
     Plugin 'tpope/vim-sleuth'
 
     call vundle#end()
@@ -92,7 +94,7 @@ call PluginTagbar()
 
 " Colors
 syntax on
-set background=dark
+set background=light
 call PluginSolarized()
 call HighlightWhitespace()
 
