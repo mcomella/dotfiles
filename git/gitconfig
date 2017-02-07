@@ -26,6 +26,7 @@
     psn = push --no-verify
     rb = rebase
     rbc = rebase --continue
+    rbiu = rebase -i up/master
     rco = "!f() { git reset $1 && git checkout $1; }; f"
     rem = remote
     remp = remote prune
