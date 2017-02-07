@@ -89,3 +89,4 @@ fi
 export LESS=RF
 
 export MOZ_DISABLE_PROGUARD=1
+export PYTHONSTARTUP=~/.dotfiles/py/startup.py
