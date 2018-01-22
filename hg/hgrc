@@ -66,12 +66,12 @@ showfunc = 1
 unified = 8
 
 [extensions]
-bzexport = ~/.mozbuild/version-control-tools/hgext/bzexport
-bzpost = ~/.mozbuild/version-control-tools/hgext/bzpost
+#bzexport = ~/.mozbuild/version-control-tools/hgext/bzexport
+#bzpost = ~/.mozbuild/version-control-tools/hgext/bzpost
 color = 
 #crecord = ~/dev/crecord/crecord
 firefoxtree = ~/.mozbuild/version-control-tools/hgext/firefoxtree
-hgwatchman = /Users/mcomella/dev/hgwatchman/hgwatchman
+fsmonitor =
 histedit = 
 mozext = ~/.mozbuild/version-control-tools/hgext/mozext
 mq = 
@@ -79,14 +79,14 @@ mq =
 pager = 
 progress = 
 purge = 
-push-to-try = ~/.mozbuild/version-control-tools/hgext/push-to-try
+#push-to-try = ~/.mozbuild/version-control-tools/hgext/push-to-try
 rebase = 
 record = 
 reviewboard = ~/.mozbuild/version-control-tools/hgext/reviewboard/client.py
 shelve = 
 strip = 
-mqext = ~/.mozbuild/version-control-tools/hgext/mqext
-qimportbz = ~/.mozbuild/version-control-tools/hgext/qimportbz
+#mqext = ~/.mozbuild/version-control-tools/hgext/mqext
+#qimportbz = ~/.mozbuild/version-control-tools/hgext/qimportbz
 #trychooser = ~/dev/trychooser/trychooser
 
 # Extensions
@@ -121,9 +121,12 @@ diff.trailingwhitespace = red_background
 
 [hostfingerprints]
 bugzilla.mozilla.org = 7c:7a:c4:6c:91:3b:6b:89:cf:f2:8c:13:b8:02:c4:25:bd:1e:25:17
-bitbucket.org = 46:de:34:e7:9b:18:cd:7f:ae:fd:8b:e3:bc:f4:1a:5e:38:d7:ac:24
-hg.mozilla.org = 73:7F:EF:AB:68:0F:49:3F:88:91:F0:B7:06:69:FD:8F:F2:55:C9:56
+#bitbucket.org = 46:de:34:e7:9b:18:cd:7f:ae:fd:8b:e3:bc:f4:1a:5e:38:d7:ac:24
+#hg.mozilla.org = 73:7F:EF:AB:68:0F:49:3F:88:91:F0:B7:06:69:FD:8F:F2:55:C9:56
 #reviewboard-hg.mozilla.org = a6:13:ae:35:2c:20:2b:8d:f4:8d:8e:d7:a8:55:67:97
+
+[hostsecurity]
+hg.mozilla.org:fingerprints=sha256:8e:ad:f7:6a:eb:44:06:15:ed:f3:e4:69:a6:64:60:37:2d:ff:98:88:37:bf:d7:b8:40:84:01:48:9c:26:ce:d9
 
 [mozilla]
 ircnick = mcomella
@@ -141,11 +144,11 @@ pager = LESS='FRX' less
 [paths]
 review = ssh://reviewboard-hg.mozilla.org/autoreview
 
-[watchman]
-mode = on
 [experimental]
 clonebundles = true
+
 [revsetalias]
 wip = (parents(not public()) or not public() or . or (head() and branch(default))) and (not obsolete() or unstable()^) and not closed()
+
 [templates]
 wip = '{label("log.branch", branches)} {label("changeset.{phase}", rev)}{label("changeset.{phase}", ":")}{label("changeset.{phase}", short(node))} {label("grep.user", author|user)}{label("log.tag", if(tags," {tags}"))}{label("log.tag", if(fxheads," {fxheads}"))} {label("log.bookmark", if(bookmarks," {bookmarks}"))}\n{label(ifcontains(rev, revset("."), "desc.here"),desc|firstline)}'

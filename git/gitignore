@@ -1,3 +1,7 @@
+# not always necessary :(
+.idea
+*.iml
+
 # object files
 bin/
 build/

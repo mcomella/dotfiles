@@ -20,6 +20,8 @@ function Vundle() " https://github.com/VundleVim/Vundle.vim
     Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'toyamarinyon/vim-swift'
     Plugin 'tpope/vim-sleuth'
+    Plugin 'leafgarland/typescript-vim'
+    Plugin 'jvirtanen/vim-octave'
 
     call vundle#end()
     filetype plugin indent on    " required

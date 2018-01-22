@@ -5,6 +5,9 @@
     c = commit
     ca = commit --amend
     co = checkout
+    copr = "!f() { git branch -D review; git fetch up pull/$1/head:review && git checkout review; }; f"
+    cou = checkout up/master
+    coub = checkout up/master -b 
     cp = cherry-pick
     d = diff
     ds = diff --staged
@@ -22,6 +25,8 @@
     m = merge
     mup = merge upstream/master
     pl = pull
+    pr-land = "!f() { git push -f origin $1:$1 --no-verify && git push up master:master --no-verify && git push origin :$1 --no-verify && git branch -d $1; }; f"
+    pr-merge = "!f() { git checkout master && git merge up/master && git checkout $1 && git rebase master && git checkout master && git merge --no-ff $1 -m \"Merge PR: $2\"; }; f" # TODO: maybe merge without moving master.
     ps = push
     psn = push --no-verify
     rb = rebase
@@ -61,3 +66,8 @@
 [user]
     name = Michael Comella
     email = michael.l.comella@gmail.com
+    signingkey = D121C557F0782CCF
+[gpg]
+	program = gpg2
+[commit]
+	gpgsign = true

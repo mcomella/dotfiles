@@ -88,5 +88,11 @@ fi
 
 export LESS=RF
 
-export MOZ_DISABLE_PROGUARD=1
 export PYTHONSTARTUP=~/.dotfiles/py/startup.py
+export GPG_TTY=$(tty) # for git and gpg.
+
+###-tns-completion-start-###
+if [ -f /Users/mcomella/.tnsrc ]; then 
+    source /Users/mcomella/.tnsrc 
+fi
+###-tns-completion-end-###
