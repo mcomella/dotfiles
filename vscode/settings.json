@@ -1,0 +1,18 @@
+{
+    "workbench.colorTheme": "Solarized Light",
+
+    "window.openFoldersInNewWindow": "on",
+    "files.autoSave": "afterDelay",
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+
+    "git.ignoreMissingGitWarning": true,
+
+    "editor.lineNumbers": "relative",
+
+    "[markdown]": {
+        "editor.wordWrap": "wordWrapColumn",
+    },
+}
