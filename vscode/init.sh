@@ -3,5 +3,7 @@
 . ./func.sh
 
 echo "Setting up vscode configuration:";
+echo "Failed. Spaces break the script";
 
-# linkOrWarn vscode/gitconfig ~/.gitconfig where on mac?
+# Spaces break this script.
+#linkOrWarn vscode/settings.json "~/Library/Application Support/Code/Users/settings.json" # macOS

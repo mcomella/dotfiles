@@ -12,6 +12,10 @@
 
     "editor.lineNumbers": "relative",
 
+    "files.associations": {
+        "*.jsm": "javascript"
+    },
+
     "[markdown]": {
         "editor.wordWrap": "wordWrapColumn",
     },
