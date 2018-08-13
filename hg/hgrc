@@ -23,7 +23,6 @@ lp = log -Gr "draft() + draft()^"
 pl = pull
 plb = !$HG pull mozilla-central && hg bookmark -r central build && hg update build
 ps = push
-psfxr = !$HG pull fx-team && $HG rebase -b $1 -d fx-team && $HG push fx-team -r $1 && $HG bookmark -d $1 && echo "Done."
 pr = push review -r .
 pf = push fx-team -r .
 ptt = push-to-try
@@ -41,13 +40,6 @@ ush = unshelve
 
 # mq
 bz = bzexport
-qap = qapplied
-qi = qimport
-qibz = qimportbz
-qps = qpush
-qcrec = qcrecord
-qcref = qcrefresh
-qs = qseries
 wip = log --graph --rev=wip --template=wip
 
 [defaults]
