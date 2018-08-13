@@ -5,7 +5,7 @@
     c = commit
     ca = commit --amend
     co = checkout
-    copr = "!f() { git branch -D review; git fetch up pull/$1/head:review && git checkout review; }; f"
+    copr = "!f() { git checkout up/master; git branch -D review; git fetch up pull/$1/head:review && git checkout review; }; f"
     cou = checkout up/master
     coub = checkout up/master -b 
     cp = cherry-pick
@@ -16,6 +16,8 @@
     dw = diff --color-words
     dws = diff --color-words --staged
     f = fetch
+    fo = fetch origin
+    fu = fetch up
     l = log --pretty=oneline --abbrev-commit --graph --decorate --color --all -n 35
     ll = log --pretty=oneline --abbrev-commit --graph --decorate --color --all
     lp = log -p
@@ -68,6 +70,6 @@
     email = michael.l.comella@gmail.com
     signingkey = D121C557F0782CCF
 [gpg]
-	program = gpg2
+	program = gpg
 [commit]
 	gpgsign = true
