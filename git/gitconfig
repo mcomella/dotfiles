@@ -4,6 +4,10 @@
     bl = blame
     c = commit
     ca = commit --amend
+    cc = "!f() { git commit -m \"Closes #$1: $2\"; }; f"
+    cce = "!f() { git commit -e -m \"Closes #$1: $2\"; }; f"
+    ci = "!f() { git commit -m \"Issue #$1: $2\"; }; f"
+    cie = "!f() { git commit -e -m \"Issue #$1: $2\"; }; f"
     co = checkout
     copr = "!f() { git checkout up/master; git branch -D review; git fetch up pull/$1/head:review && git checkout review; }; f"
     cou = checkout up/master
