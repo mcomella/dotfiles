@@ -2,5 +2,7 @@ set hlsearch " Highlight search results.
 set number " Enables current line number in relativenumber
 set relativenumber
 
-#set smartcase # WTF doesn't work
+set ideajoin " smart joins
+
+"set smartcase " WTF doesn't work
 set ignorecase

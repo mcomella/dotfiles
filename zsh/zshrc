@@ -28,6 +28,8 @@ umask 077
 export EDITOR=vim
 export VISUAL=vim
 
+export APKS=app/build/outputs/apk
+
 # Prompt
 # via http://www.jukie.net/~bart/blog/20071219221358
 typeset -ga precmd_functions

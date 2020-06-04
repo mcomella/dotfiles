@@ -111,6 +111,8 @@ set ruler " Line/column numbers at the bottom.
 set smartcase
 set wildmenu
 
+set mouse=a " enable mouse support
+
 set expandtab
 "call SetIndentSpaceLen(4)
 

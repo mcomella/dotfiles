@@ -72,7 +72,7 @@
 [user]
     name = Michael Comella
     email = michael.l.comella@gmail.com
-    signingkey = D121C557F0782CCF
+    signingkey = 578EA8DCF6DDC4A7
 [gpg]
 	program = gpg
 [commit]

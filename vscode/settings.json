@@ -17,6 +17,17 @@
     },
 
     "[markdown]": {
-        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrap": "bounded",
     },
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "window.zoomLevel": 0,
+    "python.pythonPath": "/usr/local/bin/python3",
+
+    "spellchecker.ignoreWordsList": [
+        "prioritization",
+        "impactful",
+        "rearchitect",
+    ],
+    "editor.minimap.enabled": false,
 }
